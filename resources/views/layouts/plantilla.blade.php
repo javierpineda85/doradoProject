@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="dorado centro de investigación y rehabilitación">
+    <meta name="description" content="Somos un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.">
 
     <!--  title -->
 
@@ -85,7 +85,7 @@
                                         <ul id="nav-menu">
                                             <li><a href="/">INICIO</a></li>
                                             <li><a href="/nosotros">NOSOTROS</a></li>
-                                            <li><a href="#">NOTICIAS</a></li>
+                                            
                                             <li><a href="/contacto">CONTACTO</a></li>
                                         </ul>
                                     </div>
@@ -122,17 +122,12 @@
                             <a href="# " class="fab fa-facebook "></a>
                         </li>
                         <li>
-                            <a href="# " class="fab fa-twitter "></a>
+                            <a href="# " class="fab fa-instagram"></a>
                         </li>
                         <li>
-                            <a href="# " class="fab fa-dribbble "></a>
+                            <a href="# " class="fab fa-whatsapp "></a>
                         </li>
-                        <li>
-                            <a href="# " class="fab fa-behance "></a>
-                        </li>
-                        <li>
-                            <a href="# " class="fab fa-google-plus "></a>
-                        </li>
+                        
                     </ul>
             </div>
 
