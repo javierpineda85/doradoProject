@@ -476,6 +476,26 @@ a.icon {
 }
 
 
+/* login and register section styles
+/* ========================================== */
+
+.section-card {
+    background-color: rgb(255, 255, 255);
+    max-width: 800px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 40px;
+    padding: 40px;
+}
+
+.card-form {
+    margin: 10px;
+    padding: 10px;
+}
+
+
 /* Portfolio section styles
 /* ========================================== */
 
