@@ -7,14 +7,14 @@ Nosotros - Dorado
 
 @section('main')
 <!-- Header section -->
-<section id="header" class="header-three">
+<section id="header" class="header-two">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
                     <div class="header-thumb">
                         <h1 class="wow fadeIn" data-wow-delay="0.6s">Nosotros</h1>
-                        <h3 class="wow fadeInUp" data-wow-delay="0.9s">Vestibulum at aliquam lorem</h3>
+                        <!-- <h3 class="wow fadeInUp" data-wow-delay="0.9s">Vestibulum at aliquam lorem</h3> -->
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@ Nosotros - Dorado
             <div class="row">
 
                 <div class="wow fadeInUp col-md-4 col-sm-5" data-wow-delay="1.3s">
-                    <img src="images/about-img1.jpg" class="img-responsive" alt="About">
+                    <img src="../../img/about-img1.jpg" class="img-responsive" alt="About">
                     <h1>Sobre Dorado</h1>
                     <p>En Dorado trabaja un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.</p>
                 </div>
