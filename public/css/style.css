@@ -203,7 +203,7 @@ nav a {
     align-items: center;
     transform: translateY(-40px);
     width: auto;
-    height: 100px;
+    height: 87px;
 }
 
 .navicon {
@@ -456,8 +456,6 @@ a.icon {
 
 .header-one {
     background: url('../img/header-bg.jpg') no-repeat;
-    height: 60vh !important;
-    min-height: 520px;
     padding-top: 150px !important;
 }
 
@@ -470,7 +468,7 @@ a.icon {
 }
 
 .header-four {
-    background: url('../img/header-four-bg.jpg') no-repeat;
+    background: url('../img/header-three-bg.jpg') no-repeat;
 }
 
 .header-five {
