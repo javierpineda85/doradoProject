@@ -9,9 +9,9 @@ Contacto - Dorado
     <!-- Header section -->
 <section id="header" class="header-four">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
 
-                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 ">
                     <div class="header-thumb">
                         <h1 class="wow fadeIn" data-wow-delay="0.6s">Contactanos</h1>
                         <!-- <h3 class="wow fadeInUp" data-wow-delay="0.9s">Vestibulum at aliquam lorem</h3> -->
@@ -28,7 +28,7 @@ Contacto - Dorado
         <div class="container">
             <div class="row">
 
-                <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.3s">
+                <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s">
                     <div class="google_map">
                         <!-- <div id="map-canvas">-->
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.9692873331064!2d-68.83288648525568!3d-32.89898027680599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e093f1bd17d95%3A0xcc1c4eeac60af041!2sDORADO%20CENTRO%20DE%20INVESTIGACION%20Y%20REHABILITACI%C3%93N%20INTEGRAL!5e0!3m2!1ses-419!2sar!4v1577461890627!5m2!1ses-419!2sar"
@@ -37,7 +37,7 @@ Contacto - Dorado
                     </div>
                 </div>
 
-                <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
+                <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.9s" style="background-color:white;">
                     <h1>Envianos tu mensaje!</h1>
                     <div class="contact-form">
                         <form id="contact-form" method="post" action="#">

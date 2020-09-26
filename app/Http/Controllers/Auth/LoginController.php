@@ -35,6 +35,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+         $this->redirecTo = route('dashboard');
+        //$this->redirecTo = route('dashboard','DashboardController@index')->name('dashboard');
         $this->middleware('guest')->except('logout');
     }
 }

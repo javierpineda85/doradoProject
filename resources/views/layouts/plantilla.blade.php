@@ -35,6 +35,7 @@
     <!--Personal CSS -->
 
     <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
 
     @yield('css')
 
@@ -42,7 +43,8 @@
     <link rel="shortcut icon" href=""> -->
 
     <!--FontAwesome -->
-    <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
+    <script src="https://kit.fontawesome.com/7907a05fb3.js"></script> 
+   
     @yield('js')
 
 </head>
@@ -67,7 +69,7 @@
 
                             <div class="brand">
 
-                                <a class="navbar-brand" href="#">
+                                <a class="navbar-brand" href="/">
                                     <img src="../../img/dorado-color.jpg" alt="" class="brand-img">
                                 </a>
                             </div>
@@ -87,6 +89,7 @@
                                             <li><a href="/nosotros">NOSOTROS</a></li>
                                             
                                             <li><a href="/contacto">CONTACTO</a></li>
+                                            <li><a href="{{ route('login') }}">INGRESAR</a></li>
                                         </ul>
                                     </div>
                                 </div>

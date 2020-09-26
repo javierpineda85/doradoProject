@@ -36,4 +36,47 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /*public function profile(){
+        return $this->hasOne(Profile::class);
+    } */
+    public function profile_parent(){
+        return $this->hasOne(Profile_parent::class);
+    }
+    
+    public function profile_kid(){
+        return $this->hasOneThrough(Profile_kid::class, Profile_parent::class);
+    }
+
+    public function profile_prof(){
+        return $this->hasOne(Profile_prof::class);
+    }
+
+
+    public function level(){
+        return $this->belongsTo(Level::class);
+    }
+
+    public function groups(){
+        return $this->belongsToMany(Group::class)->withTimestamps();
+    }
+
+    public function location(){
+        return $this->hasOneThrough(Location::class, Profile::class);
+    }
+
+    public function histories(){
+        return $this->hasMany(History::class);
+    }
+
+    public function chats(){
+        return $this->hasMany(Chat::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }

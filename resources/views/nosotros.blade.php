@@ -9,9 +9,9 @@ Nosotros - Dorado
 <!-- Header section -->
 <section id="header" class="header-two">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
 
-                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 ">
                     <div class="header-thumb">
                         <h1 class="wow fadeIn" data-wow-delay="0.6s">Nosotros</h1>
                         <!-- <h3 class="wow fadeInUp" data-wow-delay="0.9s">Vestibulum at aliquam lorem</h3> -->
@@ -39,7 +39,7 @@ Nosotros - Dorado
                     <p>
                     El motor es nuestra necesidad de pensar y aplicar enfoques creativos e innovadores abiertos a la documentación y seguimiento basado en la evidencia empírica relacionados con el área terapéutica, educativa y recreativa.
                     Fusionamos nuestras corrientes terapéuticas con talleres inclusivo de acceso universal complementando objetivos transversales y fomentando el interés de los participantes. Así nacen espacios como: acrobacia aérea en tela de entrenamiento motor, psico motor y vestibular; producción culinaria con programas de aplicación previa y post producción de las actividades de la vida diaria e instrumental; turismo aventura con orientación a la comunicación interpersonal y cooperación grupal; artes visuales colaborando en las habilidades grafomotoras y alfabetización, entre otros...
-                    <br>La tarea implica una propuesta individual ajustando las exigencias del entorno social y mediando con las redes de este entorno para fortacer espacios adaptados que favorezcan la inclusión. Dorado no solo trabaja puertas adentro, trabaja y trabaja mucho puertas afuera...
+                    <br>La tarea implica una propuesta individual ajustando las exigencias del entorno social y mediando con las redes de este entorno para fortacer espacios adaptados que favorezcan la inclusión. <spam> Dorado </spam>no solo trabaja puertas adentro, trabaja y trabaja mucho puertas afuera...
 
                     </p>
                 </div>
@@ -48,7 +48,7 @@ Nosotros - Dorado
 
                 <div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="0.4s">
                     <h1>PSICOLOGÍA</h1>
-                    <p>Desde una corriente neuropsicológica, evalúa y define el perfil para aplicar programas de rehabilitación, estimulación cognitiva,desarrollo de habilidades sociales y emocionales. 
+                    <p>Desde una corriente neuropsicológica, evalúa y define el perfil para aplicar programas de rehabilitación, estimulación cognitiva, desarrollo de habilidades sociales y emocionales. 
                         <br>El trabajo transdisciplinar permite el abordaje integral, siendo el eje principal favorecer aspectos de independencia funcional y brindar herramientas al niño y a la familia que permitan inclusión en todos los ámbitos donde se desarrollan.
                     </p>
                 </div>
@@ -60,20 +60,20 @@ Nosotros - Dorado
 
                 <div class="wow fadeInUp col-md-4 col-sm-6" data-wow-delay="1.2s">
                     <h1>PSICOPEDAGOGIA</h1>
-                    <p>Psicopedagogía en Dorado, desde el neurodesarrollo, se busca acompañar el proceso de aprendizaje de cada niño o adolescente, teniendo en cuenta sus particularidades, intereses y potencialidad ( cognitiva, afectiva y social). Respetando también las distintas etapas de aprendizaje que abarca su vida; para un mejor desempeño en las actividades que desempeña cotidianamente teniendo como eje central un abordaje terapéutico e inclusivo.</p>
+                    <p>Psicopedagogía en <spam>Dorado</spam>, desde el neurodesarrollo, se busca acompañar el proceso de aprendizaje de cada niño o adolescente, teniendo en cuenta sus particularidades, intereses y potencialidad ( cognitiva, afectiva y social). Respetando también las distintas etapas de aprendizaje que abarca su vida; para un mejor desempeño en las actividades que desempeña cotidianamente teniendo como eje central un abordaje terapéutico e inclusivo.</p>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1.4s">
                     <h1>KINESIOLOGÍA</h1>
-                    <p>Rehabilitacion motora con enfoque integral orientado a mejorar la postura y la movilidad del paciente y a aumentar su autonomia en transferencias y traslados a través de movilizaciones pasivas y activas, ejercitación activa de diferentes grupos musculares en un espacio lúdico, combinado con aplicación de taping neuromuscular y utilización de electroterapia.
-Esta área se combina con la ASISTENCIA SOCIAL para favorecer las adaptaciones de los entornos pensados desde el DU (diseño universal). Se complementa con los talleres de turismo aventura, acrobacia aérea en tela y terapias asistida con animales en donde extiende la propuesta al aumento radical de la motivación e intereses de los participantes.</p>
+                    <p>Rehabilitación motora con enfoque integral orientado a mejorar la postura y la movilidad del paciente y a aumentar su autonomía en transferencias y traslados a través de movilizaciones pasivas y activas, ejercitación activa de diferentes grupos musculares en un espacio lúdico, combinado con aplicación de taping neuromuscular y utilización de electroterapia.
+Esta área se combina con la <spam>ASISTENCIA SOCIAL </spam>para favorecer las adaptaciones de los entornos pensados desde el DU (diseño universal). Se complementa con los talleres de turismo aventura, acrobacia aérea en tela y terapias asistida con animales en donde extiende la propuesta al aumento radical de la motivación e intereses de los participantes.</p>
                 </div>
 
                 <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="1.6s">
                     <h1>TERAPIA OCUPACIONAL</h1>
-                    <p>Terapia Ocupacional en Dorado desde el área se brinda un servicio basado en los principios de la Neurorrehabilitación, para la implementación de diversos abordajes terapéuticos basados en elaboración e implementación de programas individuales a través de la evaluación y recursos terapéuticos que sean prioridad para el usuario, teniendo como principal objetivo la motivación, estableciendo un perfil ocupacional que permita facilitar herramientas que les permitas desarrollar autonomía e independencia en actividades de la vida diaria e instrumentales. Fundamentales para el desarrollo de la persona en cualquiera de sus ámbitos de inclusión diaria. Es necesario destacar que dicho plan de tratamiento se da bajo rutinas de atención conjunta en sesiones compartidas.</p>
+                    <p>Terapia Ocupacional en <spam>Dorado </spam>desde el área se brinda un servicio basado en los principios de la Neurorrehabilitación, para la implementación de diversos abordajes terapéuticos basados en elaboración e implementación de programas individuales a través de la evaluación y recursos terapéuticos que sean prioridad para el usuario, teniendo como principal objetivo la motivación, estableciendo un perfil ocupacional que permita facilitar herramientas que les permitas desarrollar autonomía e independencia en actividades de la vida diaria e instrumentales. Fundamentales para el desarrollo de la persona en cualquiera de sus ámbitos de inclusión diaria. Es necesario destacar que dicho plan de tratamiento se da bajo rutinas de atención conjunta en sesiones compartidas.</p>
                 </div>
 
             </div>

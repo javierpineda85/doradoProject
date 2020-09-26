@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -10,7 +10,14 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="../../css/animation.min.css">
+
+    <!-- Font Icons CSS -->
+    <link rel="stylesheet" href="../../css/font-awesome.min.css"> <!--version 5.12 -->
+    <link rel="stylesheet" href="../../css/ionicons.min.css">
 
     <!--Personal CSS -->
 
@@ -18,7 +25,7 @@
     @yield('css')
 
     <!--Icono -->
-    <link rel="shortcut icon" href="img/faviconasa.ico">
+    <link rel="shortcut icon" href="#">
 
     <!--FontAwesome -->
     <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
@@ -38,30 +45,28 @@
             <div class="row">
               <!-- sidebar -->
               <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" style="min-width: 250px;">
-                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="../../img/asalogo2.png" alt="asa" width="50px" border-radius="50%" class="mt-3 mb-3"></a>
+                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="../../img/dorado-color.jpg" alt="" width="100px" class="mt-3 mb-3"></a>
 
                 <div class="bottom-border mb-4 align-items-center ">
 
-                  @if (Auth::check())
+                 
                   <label class="usuario text-light justify-content-center">
-                    @if(Auth::user()->avatar !=null)
-                      <img src="storage/{{Auth::user()->avatar}}" alt="" width="40px" border-radius="50%">
-                    @else
-                      <span><i class=" fas fa-user text-light fa-lg mr-3"></i></span>
-                    @endif
+                  
+                      <span><i class="fas fa-user text-light fa-lg mr-3"></i></span>
+                   
 
-                      ¡Hola <b>{{Auth::user()->name}}</b>!
-
+                      ¡Hola <b>Usuario Prueba</b>! 
+                    
                   </label>
-                  @endif
+                 
 
-                </div>
+                </div> 
                 <ul class="navbar-nav flex-column mt-4">
                   <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="/admin/tramites/gestion-de-tramites" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a></li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-globe-americas text-light fa-lg mr-3"></i>Noticias </a></li>
-                  <li class="nav-item"> <a href="/admin/usuarios/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Capacitaciones</a> </li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Pacientes</a></li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Disciplinas</a> </li>
 
                 </ul>
               </div>
@@ -133,14 +138,13 @@
 
     </main>
 
-
+    <script src="js/jquery.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/isotope.js "></script>
+    <script src="js/imagesloaded.min.js "></script>
+    <script src="js/wow.min.js "></script>
+    <script src="js/custom.js "></script>
 </body>
 
 </html>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/up.js"></script>
+
