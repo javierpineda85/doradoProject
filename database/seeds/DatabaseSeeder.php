@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         factory(App\Group::class)->create(['name' => 'ADMIN 3']);
 
 
-        factory(App\Level::class)->create(['name' => 'Oro']);
-        factory(App\Level::class)->create(['name' => 'Plata']);
-        factory(App\Level::class)->create(['name' => 'Bronce']);
+        factory(App\Level::class)->create(['levelName' => 'Baja']);
+        factory(App\Level::class)->create(['levelName' => 'Media']);
+        factory(App\Level::class)->create(['levelName' => 'Alta']);
         
         //Ahora creamos 20 usuarios
         

@@ -17,7 +17,9 @@ class CreateHistoriesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('name');
+
+            $table->string('body');
+            $table->boolean('permanent');
 
             $table->timestamps();
 

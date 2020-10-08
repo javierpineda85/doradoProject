@@ -18,7 +18,10 @@ class CreateProfileProfsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->integer('dni');
             $table->integer('cuil');
-            $table->date('birthday');            
+            $table->date('birthday');
+            $table->string('street');
+            $table->string('street_number');
+            $table->string('street_house');           
             $table->string('phone');
             $table->string('specialty')->nullable();
             $table->integer('matricula');
