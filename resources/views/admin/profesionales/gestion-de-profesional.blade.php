@@ -2,7 +2,7 @@
 
 
 @section('title')
-Nuevo Profesional
+Gestión de Profesional
 @endsection
 
 @section('admin-section')
@@ -14,6 +14,7 @@ Nuevo Profesional
 <div class="row pt-md-5 mt-md-3 mb-5">
     <div class="p-3 m-3">
         <h3>Gestión de Profesional</h3>
+        
     </div>
 
     <!-- INICIO DE FORMULARIO -->
@@ -78,7 +79,7 @@ Nuevo Profesional
         <div class="form-row"> <!-- calle / nro / depto -->
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip03">Calle / Barrio</label>
-                <input type="text" class="form-control" id="validationTooltip03" value="Calle / Barrio" required>
+                <input type="text" class="form-control" id="validationTooltip03" value="{{$profesional->street}}" required>
                 <div class="invalid-tooltip">
                     Por favor completa con la calle o barrio.
                 </div>
@@ -86,7 +87,7 @@ Nuevo Profesional
         
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip04">Número / Manzana</label>
-                <input type="text" class="form-control" id="validationTooltip04" value="Número / Manzana" required>
+                <input type="text" class="form-control" id="validationTooltip04" value="{{$profesional->street_number}}" required>
                 <div class="invalid-tooltip">
                     Recuerda colocar la altura o manzana.
                 </div>
@@ -94,7 +95,7 @@ Nuevo Profesional
         
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip05">Depto / Casa</label>
-                <input type="text" class="form-control" id="validationTooltip05" value="Casa" required>
+                <input type="text" class="form-control" id="validationTooltip05" value="{{$profesional->street_house}}" required>
                 <div class="invalid-tooltip">
                     Recuerda colocar también el departamento o casa.
                 </div>

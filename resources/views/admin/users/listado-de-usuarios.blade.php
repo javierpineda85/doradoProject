@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Listado de Usuarios
+/ Ususarios /Listado de Usuarios
 @endsection
 
 @section('main')
@@ -31,31 +31,29 @@ Panel de Control
         <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Usuarios</h3>
-    <table class="table table-striped table-hover">
+    <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
-                <!--<th class="hidden">Id</th> -->
                 <th>Apellido y Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Privilegios</th>
-                <th>Actualizar</th>
-                <!-- <th>Eliminar</th> -->
+                <th></th>
         </thead>
         <tbody>
-           
+            @foreach($usuarios as $usuario)
+            
             <tr>
-                
-                <td> $usuario->lastname $usuario->name</td>
-
-                <td> $usuario->email </td>
-                <td> $usuario->phone</td>
-                <td> $usuario->level</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="#">Actualizar</a></button> </td>
-
+                <td>{{$usuario->lastName}} {{$usuario->name}}</td>
+                <td>{{$usuario->email}}</td>
+                <td>{{$usuario->phone}}</td>
+                <td>{{$usuario->level}}<td>
+                <td><button class="btn btn-info btn-secondary"> <a href="/admin/users/modificar-usuario-{{$usuario->id}}"><i class="fas fa-search"></i></a></button></td>
             </tr>
-           
+
+            @endforeach
         </tbody>
+        
     </table>
     <!-- pagination  -->
 

@@ -25,29 +25,28 @@ Panel de Control
         <button class="btn btn-info" type="reset" name="button"> <a href="/admin/pacientes/listado-de-pacientes">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Pacientes</h3>
-    <table class="table table-striped table-hover">
+    <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
-                <!--<th class="hidden">Id</th> -->
                 <th>Apellido y Nombre</th>
                 <th>DNI</th>
                 <th>F de Nac</th>
                 <th>Diagnóstico</th>
                 <th>Obra Social</th>
-                <th>VER H.C.</th>
+                <th></th>
+                <th></th>
         </thead>
         <tbody>
             @foreach ($pacientes as $paciente)
             <tr>
                 
                 <td> {{$paciente->lastName}} {{$paciente->name}}</td>
-
                 <td> {{$paciente->dni}} </td>
                 <td> {{$paciente->birthday}}</td>
                 <td> {{$paciente->diagnostic}}</td>
                 <td> {{$paciente->socialMedicine}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}">Ver</a></button> </td>
-
+                <td><button class="btn btn-info btn-secondary"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="fas fa-search"></i></a></button> </td>
+                <td><button class="btn btn-warning"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}"><i class="fas fa-pencil-alt"></i></a></button></td>
             </tr>
             @endforeach
         </tbody>

@@ -70,7 +70,7 @@
                             <div class="brand">
 
                                 <a class="navbar-brand" href="/">
-                                    <img src="../../img/dorado-color.jpg" alt="" class="brand-img">
+                                    <img src="../../img/dorado-logo.png" alt="" class="brand-img">
                                 </a>
                             </div>
 
@@ -87,8 +87,8 @@
                                         <ul id="nav-menu">
                                             <li><a href="/">INICIO</a></li>
                                             <li><a href="/nosotros">NOSOTROS</a></li>
-                                            
                                             <li><a href="/contacto">CONTACTO</a></li>
+                                            <li><a href="/novedades">NOVEDADES</a></li>
                                             <li><a href="{{ route('login') }}">INGRESAR</a></li>
                                         </ul>
                                     </div>

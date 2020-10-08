@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Listado de Profesionales
+/ Noticias /Listado de Noticias
 @endsection
 
 @section('main')
@@ -30,26 +30,26 @@ Panel de Control
         </div>
         <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
     </div>
-    <h3 class="text-muted text-center mb-3 mt-3">Listado de Profesionales</h3>
+    <h3 class="text-muted text-center mb-3 mt-3">Listado de Noticias</h3>
     <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
-                <th>Apellido y Nombre</th>
-                <th>Email</th>
-                <th>Telefono</th>
-                <th>Especialidad</th>
+                <th>Fecha</th>
+                <th>titulo</th>
+                <th>subtitulo</th>
+                <th>Cuerpo</th>
                 <th>Ver </th>
                 
         </thead>
         <tbody>
-        @foreach ($profesionales as $profesional)
+        @foreach ($novedades as $noticia)
             
             <tr>
-                <td> {{$profesional->lastName}} {{$profesional->name}}</td>
-                <td> {{$profesional->email}} </td>
-                <td> {{$profesional->phone}}</td>
-                <td> {{$profesional->specialty}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/profesionales/modificar-profesional-{{$profesional->id}}"><i class="fas fa-search"></i></a></button> </td>
+                <td> {{$noticia->created_at}} </td>
+                <td> {{$noticia->title}} </td>
+                <td> {{$noticia->subtitle}}</td>
+                <td> {{$noticia->body}}</td>
+                <td><button class="btn btn-info btn-secondary"> <a href="/admin/noticias/ver-novedad{{$noticia->id}}"><i class="fas fa-search"></i></a></button> </td>
 
             </tr>
         @endforeach

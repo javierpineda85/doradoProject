@@ -28,7 +28,7 @@ Nuevo Profesional
         
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Nombres</label>
-                <input type="text" class="form-control" id="validationTooltip01" placeholder="Nombre" value="" required>
+                <input type="text" class="form-control" id="validationTooltip01" value="" required>
                 <div class="valid-tooltip">
                     Correcto!
                 </div>
@@ -36,7 +36,7 @@ Nuevo Profesional
         
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Apellidos</label>
-                <input type="text" class="form-control" id="validationTooltip02" placeholder="Apellidos" value="" required>
+                <input type="text" class="form-control" id="validationTooltip02"  value="" required>
                 <div class="valid-tooltip">
                     Correcto!
                 </div>
@@ -47,7 +47,7 @@ Nuevo Profesional
             <div class="col-md-4 mb-3">
                 <label for="validationTooltipUsername">D.N.I.</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="D.N.I." aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor ingresa todo junto sin espacio.
                     </div>
@@ -57,7 +57,7 @@ Nuevo Profesional
             <div class="col-md-4 mb-3">
                 <label for="validationTooltipUsername">C.U.I.L./C.U.I.T.</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="CUIL / CUIT" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor ingresa todo junto sin espacio.
                     </div>
@@ -67,7 +67,7 @@ Nuevo Profesional
             <div class="col-md-4 mb-3">
                 <label for="validationTooltipUsername">Fecha de Nac.</label>
                 <div class="input-group">
-                    <input type="date" class="form-control" id="validationTooltipUsername" placeholder="30/02/2000" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="date" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                     No te olvides de llenar este campo.
                     </div>
@@ -78,7 +78,7 @@ Nuevo Profesional
         <div class="form-row"> <!-- calle / nro / depto -->
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip03">Calle / Barrio</label>
-                <input type="text" class="form-control" id="validationTooltip03" placeholder="Calle / Barrio" required>
+                <input type="text" class="form-control" id="validationTooltip03"  required>
                 <div class="invalid-tooltip">
                     Por favor completa con la calle o barrio.
                 </div>
@@ -86,7 +86,7 @@ Nuevo Profesional
         
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip04">Número / Manzana</label>
-                <input type="text" class="form-control" id="validationTooltip04" placeholder="Número / Manzana" required>
+                <input type="text" class="form-control" id="validationTooltip04"  required>
                 <div class="invalid-tooltip">
                     Recuerda colocar la altura o manzana.
                 </div>
@@ -94,18 +94,35 @@ Nuevo Profesional
         
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip05">Depto / Casa</label>
-                <input type="text" class="form-control" id="validationTooltip05" placeholder="Casa" required>
+                <input type="text" class="form-control" id="validationTooltip05" required>
                 <div class="invalid-tooltip">
                     Recuerda colocar también el departamento o casa.
                 </div>
             </div>
         </div>
+        <div class="form-row"> <!-- localidad / provincia -->
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip03">Localidad</label>
+                <input type="text" class="form-control" id="validationTooltip03" required>
+                <div class="invalid-tooltip">
+                    Por favor completa con la calle o barrio.
+                </div>
+            </div>
+        
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip04">Provincia</label>
+                <input type="text" class="form-control" id="validationTooltip04" required>
+                <div class="invalid-tooltip">
+                    Recuerda colocar la altura o manzana.
+                </div>
+            </div>
 
+        </div>
         <div class="form-row"> <!-- telefono / mail -->
 
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip04">Teléfono de Contacto</label>
-                <input type="text" class="form-control" id="validationTooltip04" placeholder="2619876543" required>
+                <input type="text" class="form-control" id="validationTooltip04" required>
                 <div class="invalid-tooltip">
                     Este campo también debes completarlo.
                 </div>
@@ -135,10 +152,10 @@ Nuevo Profesional
         </div>
             
         <div class="form-row"> <!-- Especialidad -->
-            <div class="col-md-10 mb-2">
+            <div class="col-md-12 mb-2">
                 <label for="validationTooltipUsername">Especialidad</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Especialidad" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor no te olvides de completar aquí.
                     </div>
@@ -150,7 +167,7 @@ Nuevo Profesional
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername">Matricula</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="xxxxxxxx" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor ingresa todo junto sin espacio.
                     </div>
@@ -160,7 +177,7 @@ Nuevo Profesional
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername">Fecha de Venc.</label>
                 <div class="input-group">
-                    <input type="date" class="form-control" id="validationTooltipUsername" placeholder="30/02/2000" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="date" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                     No te olvides de llenar este campo.
                     </div>
@@ -169,7 +186,7 @@ Nuevo Profesional
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername">R.N.P</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="xxxxxxxx" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor ingresa todo junto sin espacio.
                     </div>
@@ -179,7 +196,7 @@ Nuevo Profesional
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername">Fecha de Venc.</label>
                 <div class="input-group">
-                    <input type="date" class="form-control" id="validationTooltipUsername" placeholder="30/02/2000" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="date" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                     No te olvides de llenar este campo.
                     </div>

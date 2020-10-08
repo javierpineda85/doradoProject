@@ -45,7 +45,7 @@
             <div class="row">
               <!-- sidebar -->
               <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" style="min-width: 250px;">
-                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="../../img/dorado-color.jpg" alt="" width="100px" class="mt-3 mb-3"></a>
+                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="../../img/dorado-logo.jpg" alt="" width="100px" class="mt-3 mb-3"></a>
 
                 <div class="bottom-border mb-4 align-items-center ">
 
@@ -55,19 +55,19 @@
                       <span><i class="fas fa-user text-light fa-lg mr-3"></i></span>
                    
 
-                      ¡Hola <b>Usuario Prueba</b>! 
+                      ¡Hola <b>Javier Pineda</b>! 
                     
                   </label>
                  
 
                 </div> 
                 <ul class="navbar-nav flex-column mt-4">
-                  <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Pacientes</a></li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Disciplinas</a> </li>
-
+                  <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-2 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
+                  <li class="nav-item"> <a href="/admin/pacientes/listado-de-pacientes" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-child text-light fa-lg mr-3"></i>Pacientes</a></li>
+                  <li class="nav-item"> <a href="/admin/profesionales/listado-de-profesionales" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
+                  <li class="nav-item"> <a href="/admin/users/listado-de-usuarios" class="nav-link text-white p-2 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-calendar-alt text-light fa-lg mr-3"></i>Calendario</a> </li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
                 </ul>
               </div>
               <!-- end sidebar -->
@@ -76,7 +76,7 @@
               <div class="col-xl-10 col-lg-9 col-md-8 ml-auto fixed-top py-2 top-navbar">
                 <div class="row align-items-center">
                   <div class="col-md-8">
-                    <h4 class="text-light mb-0 ml-4">PANEL DE CONTROL @yield('admin-section')</h4>
+                    <h5 class="text-light mb-0 ml-4">PANEL DE CONTROL @yield('admin-section')</h5>
                   </div>
 
                   <div class="col-md-3">

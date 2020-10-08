@@ -31,15 +31,8 @@ Inicio - Dorado
                 <div class="col-md-12 col-sm-12">
 
                     <!-- iso section -->
-                    <div class="iso-section wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="iso-section wow fadeInUp" data-wow-delay="0.5s">
 
-                        <ul class="filter-wrapper clearfix">
-                            <li><a href="#">Talleres</a></li>
-                            <li><a href="#">Terápias</a></li>
-                            <li><a href="#">Artes</a></li>
-                            <li><a href="#">Salidas</a></li>
-                            <!-- <li><a href="#">Especialidades</a></li> -->
-                        </ul>
 
                         <!-- iso box section -->
                         <div class="iso-box-section wow fadeInUp" data-wow-delay="0.9s">
@@ -47,11 +40,11 @@ Inicio - Dorado
 
                                 <div class="iso-box photoshop branding col-md-4 col-sm-6">
                                     <div class="portfolio-thumb">
-                                        <img src="https://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/area-familia.jpg" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="# "><i class="fa fa-link "></i></a>
-                                                <h2>FONOAUDIOLOGÍA Y TERÁPIA DEL LENGUAJE</h2>
+                                                <h2>Área Familia</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -59,11 +52,11 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic template col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="http://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/inclusion-social.jpg" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="# "><i class="fa fa-link "></i></a>
-                                                <h2>PSICOPEDAGOGÍA</h2>
+                                                <h2>Inclusión Social y educativa</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -71,11 +64,11 @@ Inicio - Dorado
 
                                 <div class="iso-box template graphic col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="http://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/prestaciones.png" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
-                                                <h2>PEDAGOGÍA TERAPÉUTICA</h2>
+                                                <h2>Prestaciones de Apoyo</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -83,11 +76,11 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic template col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="http://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/taller-inclusivos.jpg" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
-                                                <h2>PSICOLOGÍA</h2>
+                                                <h2>Talleres Inclusivos De Acceso Universal</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -95,11 +88,11 @@ Inicio - Dorado
 
                                 <div class="iso-box photoshop branding col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="http://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/investigacion.jpg" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
-                                                <h2>TERAPIA OCUPACIONAL</h2>
+                                                <h2>Investigación y Estudios Objetivos</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -107,11 +100,11 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic branding col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="http://picsum.photos/500/500" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/novedades.jpg" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
-                                                <h2>KINESIOLOGIA</h2>
+                                                <h2>Novedades</h2>
                                             </div>
                                         </div>
                                     </div>
