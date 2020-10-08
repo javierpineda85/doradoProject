@@ -16,4 +16,8 @@ class PageController extends Controller
         return view('contacto');
     }
 
+    public function novedades(){
+        return view('novedades');
+    }
+
 }

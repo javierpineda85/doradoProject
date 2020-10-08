@@ -10,8 +10,12 @@ use App\Profile_prof;
 class ProfileProfController extends Controller
 {
     public function perfil(){
-        return view('perfil');
+        return view('/admin/profesionales/perfil');
       }
+
+    public function nuevoProfesional(){
+      return view('/admin/profesionales/nuevo-profesional');
+    }
 
     public function listadoProfesionales(Request $req ){ //lista todos los pacientes
   

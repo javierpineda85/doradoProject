@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile_kid;
+use App\School;
+use App\Location;
+use App\Profile_parent;
 
 class ProfileKidController extends Controller
 {
-    public function listadoPaciente(Request $req ){ //lista todos los pacientes
+
+  public function nuevoPaciente(){
+    return view('/admin/pacientes/nuevo-paciente');
+  }
+  public function listadoPaciente(Request $req ){ //lista todos los pacientes
   
         $pacientes =  Profile_kid::orderBy('lastName','asc')
                   ->paginate(10);
@@ -29,10 +36,34 @@ class ProfileKidController extends Controller
 
       public function modificarPaciente($id){
 
-        $pacientes = Profile_kid::join("profile_parents","profile_kids.profile_parent_id","=","profile_parents.profile_kid_id")
-                        ->where('profile_kids.profile_parent_id','=',$id)
+        $pacientes = Profile_kid::find($id);
+        $escuela = School::join("profile_kids","schools.profile_kid_id","=","profile_kids.id")
+                        ->where("schools.profile_kid_id","=",$id)
                         ->get();
-        $vac=compact("pacientes");
+        $domicilio = Location::join("profile_kids","locations.profile_kid_id","=","profile_kids.id")
+                                ->where("locations.profile_kid_id","=",$id)
+                                ->get();
+        $padres = Profile_parent::Join("profile_kids","profile_parents.profile_kid_id","=","profile_kids.id")
+                                ->where("profile_parents.profile_kid_id","=",$id)
+                                ->get();
+                                
+        $vac=compact("pacientes", "escuela","domicilio", "padres");
         return view('/admin/pacientes/gestion-de-pacientes',$vac);
       }
+      public function evolucionarPaciente($id){
+
+        $pacientes = Profile_kid::where('id','=',$id)->get();
+                               
+        $vac=compact("pacientes");
+        return view('/admin/pacientes/evolucionar-paciente',$vac);
+      }
+
+      public function historiaClinica($id){
+        $pacientes = Profile_kid::where('id','=',$id)->get();
+                                        
+        $vac=compact("pacientes");
+
+        return view('/admin/pacientes/historia-clinica',$vac);
+      }
+      
 }
