@@ -91,7 +91,7 @@ a {
 }
 
 
-/* botones gestion de tramites*/
+/* botones */
 
 .a-btn {
     font-size: 20px;
@@ -193,6 +193,13 @@ a {
 
 
 /* end borders  */
+
+
+/* Date control */
+
+input.small {
+    width: 20px;
+}
 
 
 /* end cards  */

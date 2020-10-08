@@ -33,7 +33,7 @@ h4 {
 }
 
 h1 {
-    color: rgb(124, 135, 184);
+    color: rgb(15, 48, 191);
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-    color: #444;
+    color: #0a0a0a;
     font-size: 14px;
     letter-spacing: 4px;
 }
@@ -422,7 +422,7 @@ a.icon {
 }
 
 #header .header-thumb {
-    background: #ffffff;
+    background: rgba(255, 255, 255, .6);
     border: 10px solid #f9f9f9;
     padding: 62px 20px 62px 20px;
 }
@@ -446,24 +446,24 @@ a.icon {
 }
 
 .header-one {
-    background: url('../img/header-bg.jpg') no-repeat;
+    background: url('../img/header-portada.jpg') no-repeat;
     padding-top: 150px !important;
 }
 
 .header-two {
-    background: url('../img/header-two-bg.jpg') no-repeat;
+    background: url('../img/header-nosotros.jpg') no-repeat;
 }
 
 .header-three {
-    background: url('../img/header-three-bg.jpg') no-repeat;
+    background: url('../img/header-contacto.jpg') no-repeat;
 }
 
 .header-four {
-    background: url('../img/header-three-bg.jpg') no-repeat;
+    background: url('../img/header-contacto.jpg') no-repeat;
 }
 
 .header-five {
-    background: url('../img/header-five-bg.jpg') no-repeat;
+    background: url('../img/novedades.jpg') no-repeat;
 }
 
 
@@ -497,7 +497,9 @@ a.icon {
 }
 
 #portfolio img {
-    width: 100%;
+    /* width: 100%; */
+    width: 400px;
+    height: 320px;
 }
 
 #portfolio .portfolio-thumb {
