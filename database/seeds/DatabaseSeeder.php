@@ -60,7 +60,12 @@ class DatabaseSeeder extends Seeder
         });
             
         //factory(App\School::class, 20)->create(); // crea 20 escuelas
-        factory(App\Category::class, 4)->create(); // crea 4 categorias
+        factory(App\Category::class)->create(['name' => 'PADRES']);
+        factory(App\Category::class)->create(['name' => 'PROFESIONAL']);
+        factory(App\Category::class)->create(['name' => 'ADMIN 1']);
+        factory(App\Category::class)->create(['name' => 'ADMIN 2']);
+        factory(App\Category::class)->create(['name' => 'ADMIN 3']);
+
         factory(App\Tag::class, 6)->create(); // crea 6 etiquetas
         factory(App\Profile_kid::class, 20)->create();
 

@@ -108,8 +108,8 @@ img {
     height: 60px;
     background-color: #111112;
     border-radius: 100%;
-    -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
-    animation: sk-pulseScaleOut 1s infinite ease-in-out;
+    -webkit-animation: sk-pulseScaleOut 0.3s infinite ease-in-out;
+    animation: sk-pulseScaleOut 0.5s infinite ease-in-out;
 }
 
 @-webkit-keyframes sk-pulseScaleOut {

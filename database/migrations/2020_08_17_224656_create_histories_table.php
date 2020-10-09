@@ -15,21 +15,27 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('category_id')->unsigned();
+            
             $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('profile_kid_id')->unsigned();
+            $table->string('priority');
 
-            $table->string('body');
-            $table->boolean('permanent');
+            $table->mediumText('body');
+            $table->enum('status',['PUBLISHED','DRAF'])->default('PUBLISHED');
 
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('categories')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
+            
             $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+            
+            $table->foreign('profile_kid_id')->references('id')->on('profile_kids')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+            
+
+
         });
     }
 

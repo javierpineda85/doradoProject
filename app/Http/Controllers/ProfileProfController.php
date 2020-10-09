@@ -9,7 +9,11 @@ use App\Profile_prof;
 
 class ProfileProfController extends Controller
 {
-    public function perfil(){
+  public function __construct(){
+    $this->middleware('auth');
+  }   
+  
+  public function perfil(){
         return view('/admin/profesionales/perfil');
       }
 
@@ -21,7 +25,8 @@ class ProfileProfController extends Controller
   
 
       $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
-                  ->get();
+                                      ->paginate(15);            
+                                      
 
       $vac=compact("profesionales");
       return view('/admin/profesionales/listado-de-profesionales',$vac);

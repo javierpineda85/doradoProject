@@ -18,7 +18,7 @@ class CreateNovedadesTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('title');
             $table->string('subtitle');
-            $table->string('body');
+            $table->mediumTExt('body');
             $table->string('img');
             $table->timestamps();
         });

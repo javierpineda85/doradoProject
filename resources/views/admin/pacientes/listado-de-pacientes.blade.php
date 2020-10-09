@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Listado de pacientes
+/ Pacientes / Listado de pacientes
 @endsection
 
 @section('main')
@@ -52,7 +52,7 @@ Panel de Control
         </tbody>
     </table>
     <!-- pagination  -->
-
+        {{$pacientes->render()}}
    
     <!-- pagination  -->
 

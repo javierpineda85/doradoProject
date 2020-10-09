@@ -9,7 +9,10 @@ use App\Level;
 class UserController extends Controller
 {
    
-    public function listadoUsuarios(Request $req ){ //lista todos los pacientes
+  public function __construct(){
+    $this->middleware('auth');
+  }   
+  public function listadoUsuarios(Request $req ){ //lista todos los pacientes
   
 
         $usuarios = User::orderBy('lastName','asc')

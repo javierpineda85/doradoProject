@@ -67,12 +67,12 @@ Crear Novedad
                     <div class="input-group">
                         
                         <div class="custom-file col-md-6 m-2">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Subir Imagen</label>
+                            <input type="file" name="img" class="custom-file-input" id="inputGroupFile02">
+                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Subir Archivo</label>
                         </div>
                         <button class="btn btn-success m-1" type="submit">Guardar</button>
                         <button class="btn btn-info  m-1" type="reset" name="button">{{ __('Limpiar Campos') }}</button>
-                        <button class="btn btn-danger m-1">Eliminar</button>
+                        
                     </div>
    
                 </div>           

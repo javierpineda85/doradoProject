@@ -53,10 +53,7 @@
                   <label class="usuario text-light justify-content-center">
                   
                       <span><i class="fas fa-user text-light fa-lg mr-3"></i></span>
-                   
-
-                      ¡Hola <b>Javier Pineda</b>! 
-                    
+                           ¡Hola <b>{{Auth::user()->name}} </b>!
                   </label>
                  
 
@@ -82,7 +79,18 @@
                   <div class="col-md-3">
                     <ul class="navbar-nav">
 
-                      <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+                    <li class="nav-item ml-md-auto">
+                    <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Salir') }}
+                      <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                    </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                           @csrf
+                      
+                     </li>
                     </ul>
                   </div>
 

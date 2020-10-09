@@ -6,21 +6,21 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Listado de Profesionales
+/ Profesionales / Listado de Profesionales
 @endsection
 
 @section('main')
 <section class="mt-5">
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
-            <form class="" action="/admin/profesionales/listado-de-usuariosPorMail" method="get">
+            <form class="" action="/admin/profesionales/listado-de-profesionalesPorMail" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
                     <input type="text" class="form-control search-input" name="email" value="" placeholder="Buscar por email">
                 </div>
             </form>
-            <form class="" action="/admin/profesionales/listado-de-usuariosPorApellido" method="get">
+            <form class="" action="/admin/profesionales/listado-de-profesionalesPorApellido" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
@@ -28,7 +28,7 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
+        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/profesionales/listado-de-profesionales">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Profesionales</h3>
     <table class="table table-sm table-hover">
@@ -56,7 +56,7 @@ Panel de Control
         </tbody>
     </table>
     <!-- pagination  -->
-    
+    {{$profesionales->render()}}
  
    
     <!-- pagination  -->

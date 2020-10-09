@@ -86,7 +86,7 @@ Evolucionar Pacientes
                                 <input type="checkbox" aria-label="Checkbox for following text input">
                             </div>
                         </div>
-                        <label for=""class="p-1 pt-2">Guardar en registro permanente</label>
+                        <label for=""class="p-1 pt-2">Registro borrador</label>
                         <button class="btn btn-info">Guardar</button>
                     </div>
                 </div>           

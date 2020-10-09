@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/','PageController@index')->name('index');
+//Route::get('/','PageController@index')->name('index');
+Route::redirect('/','inicio');
+Route::get('inicio','Web\PageController@inicio')->name('inicio');
 
-Route::get('/nosotros','PageController@nosotros')->name('nosotros');
+Route::get('/nosotros','Web\PageController@nosotros')->name('nosotros');
 
-Route::get('/contacto','PageController@contacto')->name('contacto');
+Route::get('/contacto','Web\PageController@contacto')->name('contacto');
 
-Route::get('/novedades','PageController@novedades')->name('novedades');
+Route::get('/novedades','Web\PageController@novedades')->name('novedades');
 
 
 Auth::routes();
@@ -72,6 +74,7 @@ Route::post('/admin/noticias/crear-novedad','NovedadeController@crearNovedad');
 Route::get('/admin/noticias/ver-novedad{id}','NovedadeController@verNovedad');
 Route::post('/admin/noticias/borrar-novedad{id}','NovedadeController@deleteNovedad');
 Route::get('/admin/noticias/listado-de-novedades','NovedadeController@listadoNovedades');
+Route::get('/admin/noticias/listado-de-novedadesPorTitulo','NovedadeController@listarPorTituloNovedades');
 /*
 |--------------------------------------------------------------------------
 |admin Routes

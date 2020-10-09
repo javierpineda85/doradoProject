@@ -18,6 +18,9 @@ class Profile_kid extends Model
     public function school(){
         return $this->hasOne(School::class);
     }
+    public function history(){
+        return $this->hasOne(History::class);
+    }
     //Query Scope
 
     public function scopeName($query, $name){

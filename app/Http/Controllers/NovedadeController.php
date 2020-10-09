@@ -7,6 +7,9 @@ use App\Novedade;
 
 class NovedadeController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+      } 
     public function crearNovedad(){
         return view('admin/noticias/crear-novedad');
     }
@@ -31,6 +34,19 @@ class NovedadeController extends Controller
             
             return view('/admin/noticias/listado-de-novedades',$vac);
     }
+
+    public function listarPorTituloNovedades(Request $req ){ //lista todos los pacientes por apellido
+  
+        $titulo = $req ->get('title');
+  
+        $novedades =  Novedade::orderBy('title','asc')
+                  ->title($titulo)
+                  ->paginate(10);
+        $vac=compact("novedades");
+        return view('/admin/noticias/listado-de-novedades',$vac);
+      }
+
+
     public function VerNovedad($id){
  
         $novedades = Novedade::where('id','=',$id)->get();

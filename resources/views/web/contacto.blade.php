@@ -38,8 +38,8 @@ Contacto - Dorado
                 </div>
 
                 <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.7s" style="background-color:white;">
-                    <h1>Envianos tu mensaje!</h1>
-                    <div class="contact-form">
+                    <h1 class="p-3">Envianos tu mensaje!</h1>
+                    <div class="contact-form p-3">
                         <form id="contact-form" method="post" action="#">
                             <input name="name" type="text" class="form-control" placeholder="Tu nombre" required>
                             <input name="email" type="email" class="form-control" placeholder="Tu Email" required>

@@ -6,7 +6,7 @@ Cargar Historia Clinica
 @endsection
 
 @section('admin-section')
-/ Nueva Historia Clinica
+/ Pacientes / Nueva Historia Clinica
 @endsection
 
 @section('main')

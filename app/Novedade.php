@@ -11,5 +11,9 @@ class Novedade extends Model
 
     public $guarded=[];
 
+    public function scopeTitle($query, $title){
+        if($title)
+          return $query->where('title', 'LIKE', "%$title%");
   
+      }
 }

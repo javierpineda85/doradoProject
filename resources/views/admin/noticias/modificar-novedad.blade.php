@@ -65,7 +65,7 @@ Modificar Novedad
             <div class="col border p-2">
                 <div class="form-group">
                     <label for="" class="mr-2 font-weight-bold">Contenido: </label> 
-                    <textarea class="form-control" name="body" id="" rows="5" cols="1">{{$noticia->body}}</textarea>
+                    <textarea class="form-control" name="body" id="" rows="5" cols="1">{!!$noticia->body!!}</textarea>
                 </div>
             </div>
         </div>

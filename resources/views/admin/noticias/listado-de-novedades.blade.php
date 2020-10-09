@@ -13,22 +13,16 @@ Panel de Control
 <section class="mt-5">
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
-            <form class="" action="/admin/profesionales/listado-de-usuariosPorMail" method="get">
+
+            <form class="" action="/admin/noticias/listado-de-novedadesPorTitulo" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
-                    <input type="text" class="form-control search-input" name="email" value="" placeholder="Buscar por email">
-                </div>
-            </form>
-            <form class="" action="/admin/profesionales/listado-de-usuariosPorApellido" method="get">
-                @csrf
-                <div class="input-group">
-                    <span><i class="fas fa-search text-danger mt-2"></i></span>
-                    <input type="text" class="form-control search-input" name="lastName" value="" placeholder="Buscar por apellido">
+                    <input type="text" class="form-control search-input" name="title" value="" placeholder="Buscar por título">
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
+        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/noticias/listado-de-novedades">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Noticias</h3>
     <table class="table table-sm table-hover">
@@ -57,7 +51,7 @@ Panel de Control
     </table>
     <!-- pagination  -->
     
- 
+    {{$novedades->render()}}
    
     <!-- pagination  -->
 

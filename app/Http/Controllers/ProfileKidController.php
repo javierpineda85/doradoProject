@@ -11,9 +11,16 @@ use App\Profile_parent;
 class ProfileKidController extends Controller
 {
 
+  public function __construct(){
+    $this->middleware('auth');
+  } 
+
   public function nuevoPaciente(){
     return view('/admin/pacientes/nuevo-paciente');
   }
+
+  /* LISTADOS DE PACIENTES*/
+  
   public function listadoPaciente(Request $req ){ //lista todos los pacientes
   
         $pacientes =  Profile_kid::orderBy('lastName','asc')

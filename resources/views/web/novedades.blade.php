@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title')
-Nosotros - Dorado
+Novedades- Dorado
 @endsection
 
 
