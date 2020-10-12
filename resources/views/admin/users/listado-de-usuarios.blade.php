@@ -28,7 +28,7 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
+        <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Usuarios</h3>
     <table class="table table-sm table-hover">
@@ -38,7 +38,7 @@ Panel de Control
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Privilegios</th>
-                <th></th>
+                <th colspan="1">&nbsp;</th>
         </thead>
         <tbody>
             @foreach($usuarios as $usuario)
@@ -47,8 +47,8 @@ Panel de Control
                 <td>{{$usuario->lastName}} {{$usuario->name}}</td>
                 <td>{{$usuario->email}}</td>
                 <td>{{$usuario->phone}}</td>
-                <td>{{$usuario->level}}<td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/users/modificar-usuario-{{$usuario->id}}"><i class="fas fa-search"></i></a></button></td>
+                <td>usuario->grupo</td>
+                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/users/modificar-usuario-{{$usuario->id}}"><i class="fas fa-search"></i></a></button></td>
             </tr>
 
             @endforeach
@@ -56,33 +56,11 @@ Panel de Control
         
     </table>
     <!-- pagination  -->
-
+    {{$usuarios->render()}}
    
     <!-- pagination  -->
 
 
-
-    <!-- modal -->
-    <div class="modal fade" id="modificar-users">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Qué deseas realizar?</h4>
-                    <button type="button" name="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    Presiona modificar para actualizar sus datos o <br>
-                    eliminar para borrar permanentemente de la base de datos.
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" name="button" class="btn btn-info" data-dismiss="modal">Continar</button>
-                    <button type="button" name="button" class="btn btn-danger" data-dismiss="modal">Borrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end modal -->
 </section>
 
 @endsection

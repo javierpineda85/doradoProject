@@ -47,8 +47,8 @@ class User extends Authenticatable
         return $this->hasOneThrough(Profile_kid::class, Profile_parent::class);
     }
 
-    public function profile_prof(){
-        return $this->hasOne(Profile_prof::class);
+    public function profile_profe(){
+        return $this->hasOne(Profile_profe::class);
     }
 
 

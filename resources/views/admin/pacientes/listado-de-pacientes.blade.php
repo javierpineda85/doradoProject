@@ -22,7 +22,7 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/pacientes/listado-de-pacientes">Listar todo</a></button>
+        <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="/admin/pacientes/listado-de-pacientes">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Pacientes</h3>
     <table class="table table-sm table-hover">
@@ -33,8 +33,8 @@ Panel de Control
                 <th>F de Nac</th>
                 <th>Diagnóstico</th>
                 <th>Obra Social</th>
-                <th></th>
-                <th></th>
+                <th colspan="2">&nbsp;</th>
+                
         </thead>
         <tbody>
             @foreach ($pacientes as $paciente)
@@ -45,8 +45,8 @@ Panel de Control
                 <td> {{$paciente->birthday}}</td>
                 <td> {{$paciente->diagnostic}}</td>
                 <td> {{$paciente->socialMedicine}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="fas fa-search"></i></a></button> </td>
-                <td><button class="btn btn-warning"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}"><i class="fas fa-pencil-alt"></i></a></button></td>
+                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="fas fa-search"></i></a></button></td>
+                <td><button class="btn btn-sm btn-warning"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}"><i class="fas fa-pencil-alt"></i></a></button></td>
             </tr>
             @endforeach
         </tbody>

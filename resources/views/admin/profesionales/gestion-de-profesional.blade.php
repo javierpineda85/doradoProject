@@ -188,8 +188,8 @@ Gestión de Profesional
             </div>
         </div>
 
-        <button class="btn btn-success" type="submit">Modificar</button>
-        <button class="btn btn-danger" type="submit">Eliminar</button>
+        <button class="btn btn-sm btn-success" type="submit">Modificar</button>
+        <button class="btn btn-sm btn-danger" type="submit">Eliminar</button>
         
     </form>
     @endforeach

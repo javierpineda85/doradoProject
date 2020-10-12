@@ -22,17 +22,17 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/noticias/listado-de-novedades">Listar todo</a></button>
+        <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="/admin/noticias/listado-de-novedades">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Noticias</h3>
     <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
                 <th>Fecha</th>
-                <th>titulo</th>
-                <th>subtitulo</th>
+                <th>Título</th>
+                <th>Subtítulo</th>
                 <th>Cuerpo</th>
-                <th>Ver </th>
+                <th>&nbsp;</th>
                 
         </thead>
         <tbody>
@@ -43,7 +43,7 @@ Panel de Control
                 <td> {{$noticia->title}} </td>
                 <td> {{$noticia->subtitle}}</td>
                 <td> {{$noticia->body}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/noticias/ver-novedad{{$noticia->id}}"><i class="fas fa-search"></i></a></button> </td>
+                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/noticias/ver-novedad{{$noticia->id}}"><i class="fas fa-search"></i></a></button> </td>
 
             </tr>
         @endforeach

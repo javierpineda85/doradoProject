@@ -45,8 +45,8 @@ Panel de Control
                     <h5>Administrar Profesionales</h5>
                 </div>
                 <div class="card-footer text-secondary">
-                    <span class="btn btn-info"> <a href="/admin/profesionales/nuevo-profesional">Nuevo</a></span>
-                    <span class="btn btn-info"> <a href="/admin/profesionales/listado-de-profesionales">Listado</a></span>
+                    <span class="btn btn-info"> <a href="{{route('newProfe')}}">Nuevo</a></span>
+                    <span class="btn btn-info"> <a href="{{route('showProfe')}}">Listado</a></span>
                    <!-- <span class="btn btn-info"> <a href="#">Gestionar</a></span> -->
                 </div>
             </div>

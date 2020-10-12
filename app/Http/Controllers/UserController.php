@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
+
 use Illuminate\Http\Request;
 use App\User;
 use App\Level;
+use App\Group;
 
 class UserController extends Controller
 {
@@ -29,7 +33,7 @@ class UserController extends Controller
     
           $usuarios =  User::orderBy('lastName','asc')
                     ->email($email)
-                    ->paginate(10);
+                    ->paginate(15);
           $vac=compact("usuarios");
           return view('/admin/users/listado-de-usuarios',$vac);
         }
@@ -47,14 +51,28 @@ class UserController extends Controller
         }
         
       public function agregarUsuario(){
-        return view('/admin/users/agregar-usuario');
+
+        $groups = Group::orderBy('name','ASC')->pluck('name','id');
+        $vac=compact("groups");
+        ($groups);
+        return view('/admin/users/agregar-usuario',$vac);
       }
 
       public function modificarUsuario($id){
 
+        $groups = Group::orderBy('name','ASC')->pluck('name','id');
         $usuarios = User::where('id','=',$id)->get();
-        $vac=compact("usuarios");
+       
+        $vac=compact("usuarios","groups");
         return view('/admin/users/modificar-usuario',$vac);
       }
+
+      public function update(UserUpdateRequest $req, $id){
+        $usuario = User::find($id);
+        
+        $usuario->fill($req->all())->save();
+
+        return view('showUser')->with('info','El usuario ha sido modificado!');
+    }
 
 }

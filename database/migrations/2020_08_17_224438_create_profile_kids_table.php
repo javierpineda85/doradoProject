@@ -19,6 +19,7 @@ class CreateProfileKidsTable extends Migration
             $table->bigInteger('profile_parent_id')->unsigned();
             $table->string('name');
             $table->string('lastName');
+            $table->string('file',128)->nullable();
             $table->integer('dni');
             $table->string('genre');
             $table->date('birthday');            

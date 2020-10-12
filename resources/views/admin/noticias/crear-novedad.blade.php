@@ -11,37 +11,21 @@ Crear Novedad
 
 @section('main')
 
-<div class="row pt-md-5 mt-md-3 mb-5">
-    <div class="p-3 m-3">
+<div class="row pt-md-2 mt-md-2 mb-2">
+    <div class="p-2 m-2">
         <h3>Crear Novedad</h3>
     </div>
-    
-    <div class="container">
-    @if(session('info'))
-    <div class="alert alert-success">
-        {{session('info')}}
-    </div>
-    @endif
+</div>   
 
-    @if(count($errors))
-    <div class="alert alert-danger">
-        <ul>
-        @foreach($errors->all() as $error)
-            <li>{{$error}}</li>
-        @endforeach
-        </ul>
-    </div>
-    @endif
-
-    <form action="/admin/noticias/agregar-noticia" class="pt-3" method="post" enctype="multipart/form-data">
+ <div class="row col-10">      
+    <form action="/admin/noticias/agregar-noticia" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
                     @csrf
         <div class="row ">
             <div class="col border d-flex align-items-center p-2">
                 <Label class="mr-2 font-weight-bold">Título: </Label>
                 <input type="text" name="title">
 
-                <Label class="mr-2 font-weight-bold">profesional </Label>
-                <input type="text" name="user_id" value="21">
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
             </div>
             <div class="col border d-flex align-items-center p-2">
@@ -67,11 +51,11 @@ Crear Novedad
                     <div class="input-group">
                         
                         <div class="custom-file col-md-6 m-2">
-                            <input type="file" name="img" class="custom-file-input" id="inputGroupFile02">
+                            <input type="file" accept=".jpeg, .jpg, .png" name="file" class="custom-file-input" id="inputGroupFile02">
                             <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Subir Archivo</label>
                         </div>
-                        <button class="btn btn-success m-1" type="submit">Guardar</button>
-                        <button class="btn btn-info  m-1" type="reset" name="button">{{ __('Limpiar Campos') }}</button>
+                        <button class="btn btn-sm btn-success m-1" type="submit">Guardar</button>
+                        <button class="btn btn-sm btn-info  m-1" type="reset" name="button">{{ __('Limpiar Campos') }}</button>
                         
                     </div>
    

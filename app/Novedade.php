@@ -7,7 +7,7 @@ use App\Novedade;
 
 class Novedade extends Model
 {
-    protected $fillable = ['user_id','title', 'subtitle', 'body','img'];
+    protected $fillable = ['user_id','title', 'subtitle', 'body','file'];
 
     public $guarded=[];
 

@@ -173,6 +173,9 @@ Cargar Historia Clinica
             <div class="custom-file col-md-4 mb-3">
                 <input type="file" class="custom-file-input" id="customFileLang" lang="es">
                 <label class="custom-file-label" for="customFileLang">Subir Foto</label>
+                <div class="img col-md-4 mb-3" >
+                        <img src="" alt=""  width="200px" heigth="200px">
+                    </div>
             </div>
         </div>
 
@@ -262,7 +265,7 @@ Cargar Historia Clinica
         <div class="form-row"> <!-- Referente nombre y telefono -->
             <div class="col-md-8 mb-3">
                 <label for="validationTooltip03">Referente de Contacto</label>
-                <input type="text" class="form-control" id="validationTooltip03"  required>
+                <input type="text" class="form-control" id="validationTooltip03" value="{{$pacientes->school->contact_name}}" required>
                 <div class="invalid-tooltip">
                     Por favor completa el referente de contacto.
                 </div>
@@ -270,7 +273,7 @@ Cargar Historia Clinica
             
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip04">Teléfono</label>
-                <input type="text" class="form-control" id="validationTooltip04" required>
+                <input type="text" class="form-control" id="validationTooltip04" value="{{$pacientes->school->contact_phone}}" required>
                 <div class="invalid-tooltip">
                     Este campo también debes completarlo.
                 </div>

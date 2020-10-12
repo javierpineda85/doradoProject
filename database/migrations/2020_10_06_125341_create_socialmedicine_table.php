@@ -16,10 +16,10 @@ class CreateSocialmedicineTable extends Migration
         Schema::create('socialmedicine', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('denominacion');
-            $table->string('domicilio');
-            $table->string('telefono');
-            $table->string('email');
-            $table->string('web');
+            $table->string('domicilio')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('email')->nullable();
+            $table->string('web')->nullable();
             $table->timestamps();
         });
     }

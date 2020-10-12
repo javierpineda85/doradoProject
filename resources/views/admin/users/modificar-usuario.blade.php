@@ -11,7 +11,7 @@ Panel de Control
 
 @section('main')
 
-@foreach($usuarios as $usuario)
+
 
 <div class="row justify-content-md-center">
     <div class="col-xl-6 col-sm-6 p-2 mt-5">
@@ -22,60 +22,52 @@ Panel de Control
                     <h1 class="text-center text-secondary"><span>Modificar Usuario</span></h1>
                 </div>
                
-                
+                @foreach($usuarios as $usuario)
                 <div class="text-left text-secondary pt-3">
-                    <form action="#" class="pt-3" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('updateUser')}}" class="pt-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         
-                        <div>
-                            <label for="nombre" class="form-label pt-3 mr-3">Nombre:</label>
-                            <input id="title" type="text" class="" name="title" value="{{$usuario->name}}">
+                        <div class="fom-group mt-1">
+                            {{Form::label('name','Nombre: ')}}
+                            {{Form::text('name', $usuario->name, ['class'=>'form-control',])}}
                         </div>
 
-                        <div class="mt-1">
+                        <div class="fom-group mt-1">
 
-                            <label for="nombre" class="form-label pt-3 mr-3">Apellido:</label>
-                            <input id="title" type="text" class="" name="lastname" value="{{$usuario->lastName}}">
-                        </div>
-
-                        <div class="mt-1 pt-3">
-                            <label for="nombre" class="form-label pt-3 mr-3">Teléfono:</label>
-                            <input id="title" type="text" class="" name="phone" value="{{$usuario->phone}}">
+                            {{Form::label('name','Apellido: ')}}
+                            {{Form::text('lastName', $usuario->lastName, ['class'=>'form-control',])}}
                         </div>
 
-                        <div class="mt-1">
-                            <label for="nombre" class="form-label pt-3 mr-3">Email:</label>
-                            <input id="title" type="text" class="" name="lastname" value="{{$usuario->email}}">
+                        <div class="fom-group mt-1 pt-3">
+                            {{Form::label('phone','Teléfono: ')}}
+                            {{Form::text('phone', $usuario->phone, ['class'=>'form-control',])}}
                         </div>
-                        <div class="mt-1 mb-3 pt-2 align-items-center">
-                            <label for="nombre" class="form-label pt-3 mr-3">Rol actual:</label>
-                            <input id="title" type="text" class="w-auto" name="level" value="{{$usuario->rol}}">
-                        </div>
-                        <div class="mt-1 mb-3 pt-2 align-items-center">
-                            <label for="nombre" class="form-label pt-3 mr-3">Nuevo rol:</label>
 
+                        <div class="fom-group mt-1">
+                            {{Form::label('email','Correo electrónico: ')}}
+                            {{Form::text('email', $usuario->email, ['class'=>'form-control',])}}
                         </div>
-                        
-                        <button class="btn btn-success" type="submit" name="button">
-                            Actualizar
-                        </button>
-                        <button class="btn btn-info" type="reset" name="button">
-                            Limpiar Campos
-                        </button>
-                        
+                        <div class="form-group mt-1 mb-3 pt-2 align-items-center">
+                            {{ Form::label('group_id', 'Roles')}}
+                            {{ Form::select('group_id', $groups, null, ['class'=>'form-control']) }}
+                        </div>
+
+    	                {{ Form::submit('Guardar',['class'=> 'btn btn-sm btn-success'])}}
+                        {{ Form::submit('Borrar',['class'=> 'btn btn-sm btn-info'])}}
+                                               
                         <form class="" action="/admin/usuarios/eliminar-usuario" method="post">
                               @csrf
-                              <input type="hidden" name="id" value="{{$usuario->id}}">
-                              <button type="submit" class="btn btn-danger" onclick="deleletconfig()">Dar de Baja</button>
+                              <input type="hidden" name="id" value="$usuario->id">
+                              <button type="submit" class="btn btn-sm btn-danger" onclick="deleletconfig()">Dar de Baja</button>
                         </form>
                        
                     </form>
-                
+                @endforeach
                 </div>
                 
             </div>
         </div>
     </div>
 </div>
-@endforeach
+
 @endsection

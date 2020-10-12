@@ -21,7 +21,7 @@ class ProfileProfController extends Controller
       return view('/admin/profesionales/nuevo-profesional');
     }
 
-    public function listadoProfesionales(Request $req ){ //lista todos los pacientes
+    public function listado(Request $req ){ //lista todos los pacientes
   
 
       $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
@@ -63,4 +63,17 @@ class ProfileProfController extends Controller
         $vac=compact("profesionales");
         return view('/admin/profesionales/gestion-de-profesional',$vac);
       }
+
+      public function store(ProfileProfStoreRequest $req){
+        
+        $newProfe = Profile_prof::create($req->all());
+
+        if($req->file('file')){
+            $path = Storage::disk('public')
+                            ->put('image',$req->file('file'));
+            $newProfe->fill(['file'=>asset($path)])->save();
+        }
+
+        return back()->with('info','El profesional ha sido creado con éxito!');
+    }
 }

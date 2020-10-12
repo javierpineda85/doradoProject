@@ -59,12 +59,12 @@
 
                 </div> 
                 <ul class="navbar-nav flex-column mt-4">
-                  <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-2 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
+                  <li class="nav-item"> <a href="{{route('cpanel')}}" class="nav-link text-white p-2 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
                   <li class="nav-item"> <a href="/admin/pacientes/listado-de-pacientes" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-child text-light fa-lg mr-3"></i>Pacientes</a></li>
-                  <li class="nav-item"> <a href="/admin/profesionales/listado-de-profesionales" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
+                  <li class="nav-item"> <a href="{{route('showProfe')}}" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
                   <li class="nav-item"> <a href="/admin/users/listado-de-usuarios" class="nav-link text-white p-2 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-calendar-alt text-light fa-lg mr-3"></i>Calendario</a> </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
+                  <li class="nav-item"> <a href="/admin/noticias/listado-de-novedades" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
                 </ul>
               </div>
               <!-- end sidebar -->
@@ -95,7 +95,7 @@
                   </div>
 
                 </div>
-
+                
               </div>
               <!-- end top navbar -->
             </div>
@@ -105,7 +105,35 @@
       </nav>
 
       <!--end  navbar -->
+      <!-- INFO / ERROR -->
+      @if(session('info'))
+                <div class="container mt-4">
+                  <div class="row d-flex justify-content-end">
+                    <div class="col-md-8 col-md-offset-2">
+                      <div class="alert alert-success">
+                        {{session('info')}}
+                      </div>              
+                    </div>
+                  </div>
+                </div>
+                @endif
 
+                @if(count($errors))
+                <div class="container mt-5">
+                  <div class="row d-flex justify-content-end">
+                    <div class="col-md-8 col-md-offset-2">
+                      <div class="alert alert-danger">
+                        <ul>
+                          @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                          @endforeach
+                        </ul>                
+                      </div>              
+                    </div>
+                  </div>
+                </div>
+                @endif
+              <!-- END INFO / ERROR -->
 
       <!-- modal -->
       <div class="modal fade" id="sign-out">
@@ -137,6 +165,8 @@
       <div class="container-fluid ">
         <div class="row justify-content-md-center">
           <div class="col-xl-9 col-lg-9 col-md-8 ml-auto">
+          
+          
 
             @yield('main')
 
@@ -152,6 +182,7 @@
     <script src="js/imagesloaded.min.js "></script>
     <script src="js/wow.min.js "></script>
     <script src="js/custom.js "></script>
+    @yield('script')
 </body>
 
 </html>

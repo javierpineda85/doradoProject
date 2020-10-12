@@ -28,7 +28,7 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/profesionales/listado-de-profesionales">Listar todo</a></button>
+        <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="{{route('showProfe')}}">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Profesionales</h3>
     <table class="table table-sm table-hover">
@@ -38,7 +38,7 @@ Panel de Control
                 <th>Email</th>
                 <th>Telefono</th>
                 <th>Especialidad</th>
-                <th>Ver </th>
+                <th>&nbsp;</th>
                 
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ Panel de Control
                 <td> {{$profesional->email}} </td>
                 <td> {{$profesional->phone}}</td>
                 <td> {{$profesional->specialty}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/admin/profesionales/modificar-profesional-{{$profesional->id}}"><i class="fas fa-search"></i></a></button> </td>
+                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/profesionales/modificar-profesional-{{$profesional->id}}"><i class="fas fa-search"></i></a></button> </td>
 
             </tr>
         @endforeach

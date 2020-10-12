@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileKidStoreRequest;
+use App\Http\Requests\ProfileKidUpdateRequest;
+
 use Illuminate\Http\Request;
 use App\Profile_kid;
 use App\School;

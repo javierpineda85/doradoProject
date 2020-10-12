@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Profile_kid extends Model
 {
 
+    protected $fillable=['profile_parent_id','file','name','lastName',
+                        'dni','genre','birthday',
+                        'diagnostic','social_medicine','baja']; 
+    
     public function profile_kid(){
         return $this->belongsTo(Profile_parent::class);
     }
