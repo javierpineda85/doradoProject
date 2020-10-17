@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Http\Requests\Profile_profStoreRequest;
+use App\Http\Requests\Profile_profUpdateRequest;
+
 use App\User;
 use App\Profile_prof;
+use App\Group;
 
 
 class ProfileProfController extends Controller
@@ -17,13 +22,29 @@ class ProfileProfController extends Controller
         return view('/admin/profesionales/perfil');
       }
 
-    public function nuevoProfesional(){
-      return view('/admin/profesionales/nuevo-profesional');
+    public function nuevoProfesional($id){
+      $profesionales = User::where('id','=',$id)
+                            ->get();
+
+      $vac = compact("profesionales");
+     
+      return view('/admin/profesionales/nuevo-profesional',$vac);
+    }
+
+    public function searchProfe(){
+      
+      $profesionales = Profile_prof::rightJoin('users','profile_profs.user_id','=','users.id')
+                      ->where('group_id','=','2')
+                      ->where('profile_profs.user_id','=',null)
+                      ->orderBy('lastName','asc')
+                      ->get();
+      
+      $vac = compact("profesionales");
+      return view('/admin/profesionales/elegir-profesional',$vac);
     }
 
     public function listado(Request $req ){ //lista todos los pacientes
   
-
       $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
                                       ->paginate(15);            
                                       
@@ -52,7 +73,7 @@ class ProfileProfController extends Controller
                   ->LastName($lastName)
                   ->paginate(10);
         $vac=compact("profesionales");
-        return view('/admin/profesionales/listado-de-profesionales',$vac);
+        return back()->with($var);
       }
 
       public function modificarProfesional($id){
@@ -64,16 +85,31 @@ class ProfileProfController extends Controller
         return view('/admin/profesionales/gestion-de-profesional',$vac);
       }
 
-      public function store(ProfileProfStoreRequest $req){
-        
-        $newProfe = Profile_prof::create($req->all());
+      public function store(Profile_profStoreRequest $req){
+       
+      
+        $newProfe = [
+          'user_id'         => $req->user_id,
+          'dni'             => $req->dni,
+          'cuil'            => $req->cuil,
+          'birthday'        => $req->birthday,
+          'street'          => $req->street,
+          'street_number'   => $req->street_number,
+          'street_house'    => $req->street_house,
+          'locality'        => $req->locality,
+          'city'            => $req->city,                 
+          'phone'           => $req->phone,
+          'file'            => $req->file,
+          'specialty'       => $req->specialty,
+          'matricula'       => $req->matricula,
+          'venc_matricula'  => $req->venc_matricula,
+          'rnp'             => $req->rnp,
+          'venc_rnp'        => $req->venc_rnp,
+          'baja'            => false
+      ];
+      
+        $Profe = Profile_prof::create($newProfe);
 
-        if($req->file('file')){
-            $path = Storage::disk('public')
-                            ->put('image',$req->file('file'));
-            $newProfe->fill(['file'=>asset($path)])->save();
-        }
-
-        return back()->with('info','El profesional ha sido creado con éxito!');
+        return back()->with('info','El Profesional has sido creado con exito!');
     }
 }

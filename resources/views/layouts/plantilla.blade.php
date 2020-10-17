@@ -6,7 +6,7 @@
 
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="dorado centro de investigación y rehabilitación">
     <meta name="description" content="Somos un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.">
@@ -43,19 +43,22 @@
     <link rel="shortcut icon" href=""> -->
 
     <!--FontAwesome -->
-    <script src="https://kit.fontawesome.com/7907a05fb3.js"></script> 
+    <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" ></script> 
    
     @yield('js')
 
 </head>
 
 <body>
-    <!-- Preloader section -->
+    <!-- Preloader section 
     <div class="preloader">
 
         <div class="sk-spinner sk-spinner-pulse"></div>
 
-    </div>
+    </div>-->
 
     <header>
 
@@ -173,6 +176,9 @@
     <script src="js/imagesloaded.min.js "></script>
     <script src="js/wow.min.js "></script>
     <script src="js/custom.js "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js"> </script>
+
 </body>
 
 </html>

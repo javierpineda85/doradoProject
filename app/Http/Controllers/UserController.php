@@ -15,7 +15,11 @@ class UserController extends Controller
    
   public function __construct(){
     $this->middleware('auth');
-  }   
+  } 
+  
+  public static function UserProfes($id){
+    return User::where('group_id','=',$id)->get();
+  }
   public function listadoUsuarios(Request $req ){ //lista todos los pacientes
   
 
@@ -54,9 +58,26 @@ class UserController extends Controller
 
         $groups = Group::orderBy('name','ASC')->pluck('name','id');
         $vac=compact("groups");
-        ($groups);
+        
         return view('/admin/users/agregar-usuario',$vac);
       }
+      public function store(Request $req){
+        
+        $newUser=[
+          'group_id'     => $req->group_id,
+          'name'         => $req->name,
+          'lastName'     => $req->lastName,
+          'phone'        => $req->phone,
+          'email'        => $req->email,
+          'password'     => bcrypt($req->password),
+          'baja'         => 'ACTIVE'
+        ];
+        
+        $user = User::create($newUser);
+        
+
+        return back()->with('info','Usuario creado con éxito!');
+    }
 
       public function modificarUsuario($id){
 
@@ -74,5 +95,7 @@ class UserController extends Controller
 
         return view('showUser')->with('info','El usuario ha sido modificado!');
     }
+
+
 
 }

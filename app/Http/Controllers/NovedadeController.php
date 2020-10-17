@@ -76,7 +76,8 @@ class NovedadeController extends Controller
 
 
     public function VerNovedad($id){
- 
+
+
         $novedades = Novedade::where('id','=',$id)->get();
         $idProf = Novedade::where('id','=',$id)->pluck('user_id');
         

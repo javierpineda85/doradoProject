@@ -21,7 +21,7 @@ Panel de Control
                     <h1 class="text-center text-secondary"><span>Agregar Usuario</span></h1>
                 </div>
                 <div class="text-left text-secondary pt-3">
-                    <form action="#" class="pt-3" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('storeUser') }}" class="pt-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="fom-group mt-1">
                             {{Form::label('name','Nombre: ')}}
@@ -34,16 +34,20 @@ Panel de Control
                             {{Form::text('lastName', null, ['class'=>'form-control',])}}
                         </div>
 
-                        <div class="fom-group mt-1 pt-3">
-                            {{Form::label('phone','Teléfono: ')}}
-                            {{Form::text('phone', null, ['class'=>'form-control',])}}
-                        </div>
-
-                        <div class="fom-group mt-1">
+                        <div class="fom-group mt-1 ">
                             {{Form::label('email','Correo electrónico: ')}}
                             {{Form::text('email', null, ['class'=>'form-control',])}}
                         </div>
-                        <div class="form-group mt-1 mb-3 pt-2 align-items-center">
+
+                        <div class="fom-group mt-1">
+                            {{Form::label('password','Contraseña: ')}} <br>
+                            {{Form::password('password', null, ['class'=>'form-control',])}}
+                        </div>
+                        <div class="fom-group mt-1">
+                            {{Form::label('phone','Teléfono: ')}}
+                            {{Form::text('phone', null, ['class'=>'form-control',])}}
+                        </div>
+                        <div class="form-group mt-1">
                             {{ Form::label('group_id', 'Roles')}}
                             {{ Form::select('group_id', $groups, null, ['class'=>'form-control']) }}
                         </div>

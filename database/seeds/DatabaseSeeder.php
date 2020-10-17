@@ -26,6 +26,17 @@ class DatabaseSeeder extends Seeder
         factory(App\Level::class)->create(['levelName' => 'Media']);
         factory(App\Level::class)->create(['levelName' => 'Alta']);
         
+        App\User::create([
+            'group_id' =>'6',
+            'name'     =>'Javier',
+            'lastName' =>'Pineda',
+            'phone'    =>'2616524585',
+            'email'    =>'javierpineda85@gmail.com',
+            'baja'     =>'ACTIVE',
+            'password' =>bcrypt('@Dorado3584')
+
+        ]);
+
         //Ahora creamos 20 usuarios
         
         factory(App\User::class,20)->create()->each(function ($user) { 

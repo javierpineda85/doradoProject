@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Novedade;
 
 class PageController extends Controller
 {
@@ -19,6 +20,10 @@ class PageController extends Controller
     }
 
     public function novedades(){
-        return view('web.novedades');
+        $novedades = Novedade::orderBy('created_at','desc')
+                        ->paginate(15);
+
+        $vac=compact("novedades");
+        return view('web.novedades',$vac);
     }
 }

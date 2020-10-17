@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','lastName', 'email', 'password',
+        'group_id','name','lastName','phone', 'email', 'password','baja',
     ];
 
     /**
@@ -79,4 +79,24 @@ class User extends Authenticatable
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
     }
+
+        //Query Scope
+
+        public function scopeName($query, $name){
+            if($name)
+              return $query->where('name', 'LIKE', "%$name%");
+      
+          }
+      
+          public function scopeEmail($query, $email){
+            if($email)
+              return $query->where('email', 'LIKE', "%$email%");
+      
+          }
+      
+          public function scopeLastName($query, $lastName){
+            if($lastName)
+              return $query->where('lastName', 'LIKE', "%$lastName%");
+      
+          }
 }

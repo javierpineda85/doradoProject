@@ -15,10 +15,18 @@ Acceso no autorizado
 
 @section('main')
 
-<div class="container justify-content-center">
-  <div class="message mt-4 mb-4 p-4" style= "max-width: 320px;">
-    <h3>No posees permiso para acceder a este contenido. <br> Por favor contacta al administrador de la página.</h1>
-  </div>
-</div>
+<section>
+    <div class="container">
+        <div class="row col-12 justify-content-center">
+
+          <div class="container justify-content-center">
+            <div class="message mt-4 mb-4 p-4" style= "max-width: 320px;">
+              <h3> Acceso restringido!. <br> Por favor comunicate al administrador!.</h1>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</section>
 
 @endsection

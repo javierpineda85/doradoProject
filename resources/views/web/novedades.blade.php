@@ -25,27 +25,23 @@ Novedades- Dorado
 
     <!-- novedades -->
     <section id="about">
+   
         <div class="container">
             <div class="row d-flex justify-content-around">
-
-                <div class="card mb-3 col-md-5 m-2 p-2">
-                    <img src="http://lorempixel.com/300/300/" class="card-img-top"  alt="...">
+            @foreach($novedades as $noticia)
+                <div class="card mb-3 col-md-3 m-2 p-2">
+                    <img src="{{$noticia->file}}" class="card-img-top"  alt="" width="180px" heigth="180px">
                     <div class="card-body">
-                        <h5 class="card-title">Título</h5>
-                        <p class="card-text">Curabitur scelerisque varius condimentum. Duis mattis ante feugiat venenatis sagittis. Nullam tincidunt hendrerit tortor. Aliquam ac tortor et sem tincidunt venenatis quis imperdiet nisl. Aliquam sagittis nibh erat, sed dapibus sapien porta commodo. Fusce nec laoreet tortor, nec convallis odio. Vivamus purus orci, pretium id placerat quis, laoreet nec lacus. Pellentesque metus enim, vulputate a enim id, blandit elementum purus. In hac habitasse platea dictumst. Donec sapien neque, posuere vitae viverra id, auctor a lorem. Cras dictum arcu in iaculis tincidunt.</p>
+                        <h4 class="card-title">{{$noticia->title}}</h5>
+                        <h5 class="card-subtitle">{{$noticia->subtitle}}</h5>
+                        <p class="card-text">{{$noticia->body}}</p>
                         
                     </div>
                 </div>
-                <div class="card mb-3 col-md-5 m-2 p-2">
-                    <img src="http://lorempixel.com/300/300/" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title bold">Título</h5>
-                        <p class="card-text">Curabitur scelerisque varius condimentum. Duis mattis ante feugiat venenatis sagittis. Nullam tincidunt hendrerit tortor. Aliquam ac tortor et sem tincidunt venenatis quis imperdiet nisl. Aliquam sagittis nibh erat, sed dapibus sapien porta commodo. Fusce nec laoreet tortor, nec convallis odio. Vivamus purus orci, pretium id placerat quis, laoreet nec lacus. Pellentesque metus enim, vulputate a enim id, blandit elementum purus. In hac habitasse platea dictumst. Donec sapien neque, posuere vitae viverra id, auctor a lorem. Cras dictum arcu in iaculis tincidunt.</p>
-                        
-                    </div>
-                </div>
-
+            @endforeach
             </div>
         </div>
+        {{$novedades->render()}}
     </section>
+
 @endsection

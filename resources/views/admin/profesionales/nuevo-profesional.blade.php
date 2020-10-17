@@ -6,7 +6,7 @@ Nuevo Profesional
 @endsection
 
 @section('admin-section')
-/ Alta Profesionales
+/ Profesionales/ Alta Profesionales
 @endsection
 
 @section('main')
@@ -15,32 +15,43 @@ Nuevo Profesional
     <div class="p-2 m-2">
         <h3>Alta de Profesional</h3>
     </div>
+</div>
 
+<div class="row">
     <!-- INICIO DE FORMULARIO -->
 
     <form  action="/admin/profesionales/nuevo-profesional" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
-
+        @csrf
         <!-- DATOS PERSONALES -->
 
         <h4 class="pt-2 pb-2 m-2">Datos Personales</h4>
-        
+
+        <div class="form-row">
+
+        </div>
+    
+
         <div class="form-row"> <!-- Nombres / Apellidos -->
+       
+        @foreach($profesionales as $profe)
         
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Nombres</label>
-                <input name ="name" type="text" class="form-control" id="validationTooltip01" value="" required>
+                <input type="hidden" name="user_id" value="{{$profe->id}}">
+                <input name ="name" type="text" class="form-control" id="name" value="{{$profe->name}}" required>
+                <div class="valid-tooltip">
+                    Correcto!
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Apellidos</label>
+                <input name ="lastName" type="text" class="form-control" id="lastName"  value="{{$profe->lastName}}" required>
                 <div class="valid-tooltip">
                     Correcto!
                 </div>
             </div>
         
-            <div class="col-md-6 mb-3">
-                <label for="validationTooltip02">Apellidos</label>
-                <input name ="lastName" type="text" class="form-control" id="validationTooltip02"  value="" required>
-                <div class="valid-tooltip">
-                    Correcto!
-                </div>
-            </div>
         </div>
 
         <div class="form-row"> <!-- DNI / CUIL / Fecha de nac -->
@@ -94,10 +105,7 @@ Nuevo Profesional
         
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip05">Depto / Casa</label>
-                <input name ="street_house" type="text" class="form-control" id="validationTooltip05" required>
-                <div class="invalid-tooltip">
-                    Recuerda colocar también el departamento o casa.
-                </div>
+                <input name ="street_house" type="text" class="form-control" id="validationTooltip05" >
             </div>
         </div>
         <div class="form-row"> <!-- localidad / provincia -->
@@ -105,7 +113,7 @@ Nuevo Profesional
                 <label for="validationTooltip03">Localidad</label>
                 <input name ="locality" type="text" class="form-control" id="validationTooltip03" required>
                 <div class="invalid-tooltip">
-                    Por favor completa con la calle o barrio.
+                    Por favor completa con la localidad.
                 </div>
             </div>
         
@@ -113,7 +121,7 @@ Nuevo Profesional
                 <label for="validationTooltip04">Provincia</label>
                 <input name ="city" type="text" class="form-control" id="validationTooltip04" required>
                 <div class="invalid-tooltip">
-                    Recuerda colocar la altura o manzana.
+                    Recuerda colocar la provincia.
                 </div>
             </div>
 
@@ -122,7 +130,7 @@ Nuevo Profesional
 
             <div class="col-md-3 mb-3">
                 <label for="validationTooltip04">Teléfono de Contacto</label>
-                <input name ="phone"type="text" class="form-control" id="validationTooltip04" required>
+                <input name ="phone" type="text" class="form-control" id="validationTooltip04" value="{{$profe->phone}}"required>
                 <div class="invalid-tooltip">
                     Este campo también debes completarlo.
                 </div>
@@ -130,7 +138,7 @@ Nuevo Profesional
             
             <div class="col-md-9 mb-3">
                 <label for="validationTooltip05">Email</label>
-                <input type="text" class="form-control" id="validationTooltip05" placeholder="usuario@correo.com.ar" required>
+                <input name="email" type="text" class="form-control" id="validationTooltip05" value="{{$profe->email}}" required>
                 <div class="invalid-tooltip">
                     El teléfono de urgencias también es importante tenerlo.
                 </div>
@@ -140,7 +148,7 @@ Nuevo Profesional
     
         <div class="form-row"> <!-- foto -->
             <div class="custom-file col-md-4 mb-3">
-                <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                <input name="file" type="file" class="custom-file-input" id="customFileLang" lang="es">
                 <label class="custom-file-label" for="customFileLang">Subir Foto</label>
             </div>
         </div>
@@ -203,8 +211,9 @@ Nuevo Profesional
                 </div>
             </div>
         </div>
-
+        @endforeach
         <button class="btn btn-sm btn-primary" type="submit">Cargar formulario</button>
+    
     </form>
 </div>
 

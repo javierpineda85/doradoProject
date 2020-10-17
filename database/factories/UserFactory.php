@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'level_id'          => $faker->randomElement([null, 1, 2, 3]),
+        
         'group_id'          => $faker->randomElement([1, 2, 3, 4,5]),
         'name'              => $faker->firstName,
         'lastName'          => $faker->lastName,

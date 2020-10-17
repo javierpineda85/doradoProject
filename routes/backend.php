@@ -5,4 +5,4 @@
 |admin Routes
 |--------------------------------------------------------------------------
 */
-Route::get('dashboard','DashboardController@index')->name('dashboard');
+Route::get('/admin/admin','Backend\DashboardController@index')->name('cpanel');

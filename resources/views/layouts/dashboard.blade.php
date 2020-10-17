@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>@yield('title')</title>
@@ -29,6 +29,10 @@
 
     <!--FontAwesome -->
     <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" ></script>
+
     @yield('js')
 
 </head>
@@ -59,12 +63,12 @@
 
                 </div> 
                 <ul class="navbar-nav flex-column mt-4">
-                  <li class="nav-item"> <a href="{{route('cpanel')}}" class="nav-link text-white p-2 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="/admin/pacientes/listado-de-pacientes" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-child text-light fa-lg mr-3"></i>Pacientes</a></li>
+                  <li class="nav-item"> <a href="{{route('dashboard')}}" class="nav-link text-white p-2 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
+                  <li class="nav-item"> <a href="{{route('showKids')}}" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-child text-light fa-lg mr-3"></i>Pacientes</a></li>
                   <li class="nav-item"> <a href="{{route('showProfe')}}" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-user-tie text-light fa-lg mr-3"></i>Profesionales </a></li>
-                  <li class="nav-item"> <a href="/admin/users/listado-de-usuarios" class="nav-link text-white p-2 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
+                  <li class="nav-item"> <a href="{{route('showUser')}}" class="nav-link text-white p-2 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-calendar-alt text-light fa-lg mr-3"></i>Calendario</a> </li>
-                  <li class="nav-item"> <a href="/admin/noticias/listado-de-novedades" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
+                  <li class="nav-item"> <a href="{{route('showNews')}}" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
                 </ul>
               </div>
               <!-- end sidebar -->
@@ -182,6 +186,9 @@
     <script src="js/imagesloaded.min.js "></script>
     <script src="js/wow.min.js "></script>
     <script src="js/custom.js "></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js"> </script>
     @yield('script')
 </body>
 

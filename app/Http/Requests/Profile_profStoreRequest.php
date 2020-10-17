@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Profile_profesStoreRequest extends FormRequest
+class Profile_profStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,21 +24,21 @@ class Profile_profesStoreRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'user_id'           =>'required|integer',
+            'user_id'           =>'integer',
             'dni'               =>'required|integer',
-            'cuil'              =>'required|integer',
+            'cuil'              =>'required|string',
             'birthday'          =>'required|date',
-            'street'            =>'required|integer',
+            'street'            =>'required|string',
             'street_number'     =>'required|integer',
-            'street_house'      =>'required|integer',
+            'locality'          =>'string',
+            'city'              =>'string',
             'phone'             =>'required|string',
-            'file'              =>'required|integer',
             'specialty'         =>'required|string',
             'matricula'         =>'required|string',
             'venc_matricula'    =>'nullable|date',
             'rnp'               =>'required|string',
             'venc_rnp'          =>'required|date',
-            'baja'              =>'required|boolean'            
+                        
             
         ];
 

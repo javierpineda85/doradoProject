@@ -6,7 +6,7 @@ Gestión de Profesional
 @endsection
 
 @section('admin-section')
-/ Gestión de profesional
+/Profesionales/Gestión de profesional
 @endsection
 
 @section('main')
