@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Usuarios / Modificar Usuario
+/Usuarios/Modificar Usuario
 @endsection
 
 @section('main')
@@ -23,10 +23,11 @@ Panel de Control
                 </div>
                
                 @foreach($usuarios as $usuario)
+                
                 <div class="text-left text-secondary pt-3">
-                    <form action="{{route('updateUser')}}" class="pt-3" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        
+                   <form action="/admin/users/modificar-usuario-{{$usuario->id}}" class="pt-3" method="POST" enctype="multipart/form-data">
+                  
+                        @csrf 
                         <div class="fom-group mt-1">
                             {{Form::label('name','Nombre: ')}}
                             {{Form::text('name', $usuario->name, ['class'=>'form-control',])}}
@@ -49,22 +50,19 @@ Panel de Control
                         </div>
                         <div class="form-group mt-1 mb-3 pt-2 align-items-center">
                             {{ Form::label('group_id', 'Roles')}}
-                            {{ Form::select('group_id', $groups, null, ['class'=>'form-control']) }}
-                        </div>
+                            {{ Form::select('group_id', $groups, null, ['class'=>'form-control']) }} 
 
-    	                {{ Form::submit('Guardar',['class'=> 'btn btn-sm btn-success'])}}
-                        {{ Form::submit('Borrar',['class'=> 'btn btn-sm btn-info'])}}
-                                               
-                        <form class="" action="/admin/usuarios/eliminar-usuario" method="post">
-                              @csrf
-                              <input type="hidden" name="id" value="$usuario->id">
-                              <button type="submit" class="btn btn-sm btn-danger" onclick="deleletconfig()">Dar de Baja</button>
-                        </form>
-                       
+                        </div>
+                            {{ Form::submit('Actualizar',['class'=> 'btn btn-sm btn-success'])}}
+
+                    </form> 
+                    <form class="pt-3" action="/admin/users/eliminar-usuario-{{$usuario->id}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$usuario->id}}">
+                        <button type="submit" class="btn btn-sm btn-danger">Dar de Baja</button>
                     </form>
-                @endforeach
                 </div>
-                
+                @endforeach
             </div>
         </div>
     </div>

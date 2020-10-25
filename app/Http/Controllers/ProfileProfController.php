@@ -18,10 +18,6 @@ class ProfileProfController extends Controller
     $this->middleware('auth');
   }   
   
-  public function perfil(){
-        return view('/admin/profesionales/perfil');
-      }
-
     public function nuevoProfesional($id){
       $profesionales = User::where('id','=',$id)
                             ->get();
@@ -31,11 +27,12 @@ class ProfileProfController extends Controller
       return view('/admin/profesionales/nuevo-profesional',$vac);
     }
 
-    public function searchProfe(){
+    public function searchProfe(){ //lista SOLO los profesionales que no esten dados de alta como tales pero si como users
       
       $profesionales = Profile_prof::rightJoin('users','profile_profs.user_id','=','users.id')
                       ->where('group_id','=','2')
                       ->where('profile_profs.user_id','=',null)
+                      ->where('users.baja','=','ACTIVE')
                       ->orderBy('lastName','asc')
                       ->get();
       
@@ -43,9 +40,11 @@ class ProfileProfController extends Controller
       return view('/admin/profesionales/elegir-profesional',$vac);
     }
 
-    public function listado(Request $req ){ //lista todos los pacientes
+    public function listado(Request $req ){ //lista todos los profesionales
   
       $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
+                                      ->where('profile_profs.baja','!=','DOWN')                                
+                                      ->orderBy('lastName','asc')
                                       ->paginate(15);            
                                       
 
@@ -53,24 +52,26 @@ class ProfileProfController extends Controller
       return view('/admin/profesionales/listado-de-profesionales',$vac);
       }
       
-    public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
+    public function listarPorMail(Request $req ){ 
 
         $email = $req ->get('email');
   
         $profesionales =  Profile_prof::orderBy('lastName','asc')
                   ->email($email)
+                  ->where('baja','!=','DOWN')
                   ->paginate(10);
         $vac=compact("profesionales");
         return view('/admin/profesionales/listado-de-profesionales',$vac);
       }
    
   
-    public function listarPorApellido(Request $req ){ //lista todos los pacientes por apellido
+    public function listarPorApellido(Request $req ){ 
   
         $lastName = $req ->get('lastName');
   
         $profesionales =  Profile_prof::orderBy('lastName','asc')
                   ->LastName($lastName)
+                  ->where('baja','!=','DOWN')
                   ->paginate(10);
         $vac=compact("profesionales");
         return back()->with($var);
@@ -81,13 +82,65 @@ class ProfileProfController extends Controller
         $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
                         ->where('profile_profs.user_id','=',$id)
                         ->get();
+                        
         $vac=compact("profesionales");
         return view('/admin/profesionales/gestion-de-profesional',$vac);
       }
 
-      public function store(Profile_profStoreRequest $req){
+      public function update(Request $req, $id){
+        
+        $newUser=[
+          'group_id'     => $req->group_id,
+          'name'         => $req->name,
+          'lastName'     => $req->lastName,
+          'phone'        => $req->phone,
+          'email'        => $req->email,
+          'password'     => bcrypt($req->password),
+          'baja'         => 'ACTIVE'
+        ];
+        
+        $user = User::where('id',$id)->update($newUser);
+        
+        $profesionales = Profile_prof::find($id);
        
+        $newProfe = [
+          'user_id'         => $req->user_id,
+          'dni'             => $req->dni,
+          'cuil'            => $req->cuil,
+          'birthday'        => $req->birthday,
+          'street'          => $req->street,
+          'street_number'   => $req->street_number,
+          'street_house'    => $req->street_house,
+          'locality'        => $req->locality,
+          'city'            => $req->city,                 
+          'phone'           => $req->phone,
+          'file'            => $req->file,
+          'specialty'       => $req->specialty,
+          'matricula'       => $req->matricula,
+          'venc_matricula'  => $req->venc_matricula,
+          'rnp'             => $req->rnp,
+          'venc_rnp'        => $req->venc_rnp,
+          'baja'            => false
+      ];
       
+      if($req->file('file')){
+        $path = Storage::disk('public')
+                        ->put('image',$req->file('file'));
+        $newProfe->fill(['file'=>asset($path)])->save();
+      }
+
+        $Profe = Profile_prof::where('user_id',$id)->update($newProfe);
+        
+        $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
+                                      ->orderBy('lastName','asc')
+                                      ->paginate(15); 
+
+      $vac=compact("profesionales");
+      return view('/admin/profesionales/listado-de-profesionales',$vac)->with('info','El usuario ha sido modificado!');
+    }
+
+      public function store(Profile_profStoreRequest $req){ // Funcion de guardar con el constructor de esta forma porque no funcionaba de otra
+       
         $newProfe = [
           'user_id'         => $req->user_id,
           'dni'             => $req->dni,
@@ -112,4 +165,30 @@ class ProfileProfController extends Controller
 
         return back()->with('info','El Profesional has sido creado con exito!');
     }
+
+    public function delete(Request $req, $id){
+      
+      $profe = Profile_prof::where('user_id','=',$id)->get();
+     
+      $newProfe = [
+          'baja'=> 'DOWN'
+      ];
+    
+      $Profe = Profile_prof::where('user_id','=',$id)->update($newProfe);
+
+
+      $newUser=[
+          'baja' => 'DOWN'
+      ];
+      
+      $user = User::where('id',$id)->update($newUser);
+            
+      $usuarios = User::orderBy('lastName','asc')
+                    ->where('baja','=','ACTIVE')
+                    ->paginate(15);
+
+      $vac=compact("usuarios");
+      return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
+    }
+
 }

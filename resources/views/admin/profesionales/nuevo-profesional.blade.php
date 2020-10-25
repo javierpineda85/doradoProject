@@ -20,7 +20,7 @@ Nuevo Profesional
 <div class="row">
     <!-- INICIO DE FORMULARIO -->
 
-    <form  action="/admin/profesionales/nuevo-profesional" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
+    <form  action="{{route('storeProfe')}}" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
         @csrf
         <!-- DATOS PERSONALES -->
 
@@ -163,7 +163,7 @@ Nuevo Profesional
             <div class="col-md-12 mb-2">
                 <label for="validationTooltipUsername">Especialidad</label>
                 <div class="input-group">
-                    <input name ="specialty"type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input name ="specialty" type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                         Por favor no te olvides de completar aquí.
                     </div>
@@ -185,7 +185,7 @@ Nuevo Profesional
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername">Fecha de Venc.</label>
                 <div class="input-group">
-                    <input name ="venc_matricula"type="date" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input name ="venc_matricula" type="date" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
                     <div class="invalid-tooltip">
                     No te olvides de llenar este campo.
                     </div>

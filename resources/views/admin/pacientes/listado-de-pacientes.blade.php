@@ -14,7 +14,7 @@ Panel de Control
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
 
-            <form class="" action="/admin/pacientes/listado-de-pacientesPorApellido" method="get">
+            <form class="" action="{{route('showKidLastname')}}" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
@@ -23,6 +23,7 @@ Panel de Control
             </form>
         </div>
         <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="/admin/pacientes/listado-de-pacientes">Listar todo</a></button>
+        <button class="btn btn-sm btn-success ml-2"> <a href="{{route('searchPadre')}}">Nuevo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Pacientes</h3>
     <table class="table table-sm table-hover">

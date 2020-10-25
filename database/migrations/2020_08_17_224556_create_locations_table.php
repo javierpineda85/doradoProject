@@ -25,9 +25,7 @@ class CreateLocationsTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('profile_kid_id')->references('id')->on('profile_kids')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+           // $table->foreign('profile_kid_id')->references('id')->on('profile_kids');
         });
     }
 

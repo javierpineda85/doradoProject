@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile_parent extends Model
 {
+
+    protected $fillable=['user_id','profile_kid_id','dni','numberPhone','phone2','baja']; 
+
     public function user(){
         return $this->belongsTo(User::class);
     }

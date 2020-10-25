@@ -29,19 +29,20 @@ Novedades- Dorado
         <div class="container">
             <div class="row d-flex justify-content-around">
             @foreach($novedades as $noticia)
-                <div class="card mb-3 col-md-3 m-2 p-2">
-                    <img src="{{$noticia->file}}" class="card-img-top"  alt="" width="180px" heigth="180px">
+                <div class="card mb-5 col-md-5 m-1 p-1">
+                    
                     <div class="card-body">
                         <h4 class="card-title">{{$noticia->title}}</h5>
                         <h5 class="card-subtitle">{{$noticia->subtitle}}</h5>
                         <p class="card-text">{{$noticia->body}}</p>
                         
                     </div>
+                    <img src="{{$noticia->file}}" class="card-img-top"  alt="" max-width="150px" max-heigth="150px">
                 </div>
             @endforeach
             </div>
         </div>
         {{$novedades->render()}}
     </section>
-
+  
 @endsection

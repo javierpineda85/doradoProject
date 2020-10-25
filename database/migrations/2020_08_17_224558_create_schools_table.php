@@ -22,16 +22,15 @@ class CreateSchoolsTable extends Migration
             $table->string('school_turn');
             $table->string('schedule');
             $table->string('street');
-            $table->integer('street_number');
+            $table->integer('street_number')->nullable();
             $table->string('locality');
             $table->string('city');
-            $table->string('phone')->nullable();
             $table->string('contact_name')->nullable();
             $table->string('contact_phone')->nullable();
 
             $table->timestamps();
 
-            $table->foreign('profile_kid_id')->references('id')->on('profile_kids');
+           // $table->foreign('profile_kid_id')->references('id')->on('profile_kids');
         });
     }
 

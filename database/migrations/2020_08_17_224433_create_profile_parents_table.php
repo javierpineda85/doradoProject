@@ -15,17 +15,15 @@ class CreateProfileParentsTable extends Migration
     {
         Schema::create('profile_parents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('profile_kid_id')->unsigned();
-            $table->integer('dni');           
+            $table->bigInteger('user_id')->nullable()->unsigned();
+            $table->integer('profile_kid_id')->nullable()->unsigned();
+            $table->integer('dni')->nullable();           
             $table->string('numberPhone');
             $table->string('phone2')->nullable();
-            $table->boolean('baja')->default(false);
+            $table->enum('baja',['ACTIVE','DOWN'])->default('ACTIVE');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
     }

@@ -13,14 +13,14 @@ Panel de Control
 <section class="mt-5">
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
-            <form class="" action="/admin/profesionales/listado-de-profesionalesPorMail" method="get">
+            <form class="" action="{{route('showProfeEmail')}}" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
                     <input type="text" class="form-control search-input" name="email" value="" placeholder="Buscar por email">
                 </div>
             </form>
-            <form class="" action="/admin/profesionales/listado-de-profesionalesPorApellido" method="get">
+            <form class="" action="{{route('showProfeLastname')}}" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
@@ -29,6 +29,7 @@ Panel de Control
             </form>
         </div>
         <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="{{route('showProfe')}}">Listar todo</a></button>
+        <button class="btn btn-sm btn-success ml-2"> <a href="{{route('searchProfe')}}">Nuevo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Profesionales</h3>
     <table class="table table-sm table-hover">

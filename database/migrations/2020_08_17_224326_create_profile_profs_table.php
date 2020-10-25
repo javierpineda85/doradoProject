@@ -31,7 +31,7 @@ class CreateProfileProfsTable extends Migration
             $table->date('venc_matricula');
             $table->integer('rnp');
             $table->date('venc_rnp');
-            $table->boolean('baja')->default(false);
+            $table->enum('baja',['ACTIVE','DOWN'])->default('ACTIVE');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')

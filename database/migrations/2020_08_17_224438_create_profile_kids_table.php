@@ -15,8 +15,7 @@ class CreateProfileKidsTable extends Migration
     {
         Schema::create('profile_kids', function (Blueprint $table) {
             $table->bigIncrements('id');
-           // $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('profile_parent_id')->unsigned();
+            $table->bigInteger('profile_parent_id')->nullable()->unsigned();
             $table->string('name');
             $table->string('lastName');
             $table->string('file',128)->nullable();
@@ -25,16 +24,13 @@ class CreateProfileKidsTable extends Migration
             $table->date('birthday');            
             $table->string('diagnostic');
             $table->string('socialMedicine')->nullable();
-            $table->boolean('baja')->default(false);
+            $table->string('afiliado')->nullable();
+            $table->date('ingreso');
+            $table->enum('baja',['ACTIVE','DOWN'])->default('ACTIVE');
             $table->timestamps();
+
             
-            //$table->foreign('user_id')->references('id')->on('users')
-            //    ->onDelete('cascade')
-             //   ->onUpdate('cascade');
-            
-                $table->foreign('profile_parent_id')->references('id')->on('profile_parents')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+           // $table->foreign('profile_parent_id')->references('id')->on('profile_parents');
         });
     }
 

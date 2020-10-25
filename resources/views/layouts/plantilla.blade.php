@@ -103,7 +103,7 @@
 
                                                 @else
                                                     <li class="nav-item dropdown">
-                                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('dashboard') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                             {{ Auth::user()->name }} <span class="caret"></span>
                                                         </a>
 
@@ -150,7 +150,7 @@
         <div class="row ">
 
             <div class="col-md-12 col-sm-12 ">
-                    <p class="wow fadeInUp " data-wow-delay="0.3s ">Desarrollado por <a href="http://thebigtable.com.ar ">The Big Table </a></p>
+                    
                     <ul class="social-icon wow fadeInUp " data-wow-delay="0.6s ">
                         <li>
                             <a href="# " class="fab fa-facebook "></a>
@@ -163,6 +163,7 @@
                         </li>
                         
                     </ul>
+                    <p class="wow fadeInUp " data-wow-delay="0.3s ">Desarrollado por <a href="http://thebigtable.com.ar ">The Big Table </a></p>
             </div>
 
         </div>

@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
 
         // ahora creamos 5 grupos
 
-        factory(App\Group::class)->create(['name' => 'PADRES']);
-        factory(App\Group::class)->create(['name' => 'PROFESIONAL']);
-        factory(App\Group::class)->create(['name' => 'ADMIN 1']);
-        factory(App\Group::class)->create(['name' => 'ADMIN 2']);
-        factory(App\Group::class)->create(['name' => 'ADMIN 3']);
+        factory(App\Group::class)->create(['group_name' => 'PADRES']);
+        factory(App\Group::class)->create(['group_name' => 'PROFESIONAL']);
+        factory(App\Group::class)->create(['group_name' => 'ADMIN 1']);
+        factory(App\Group::class)->create(['group_name' => 'ADMIN 2']);
+        factory(App\Group::class)->create(['group_name' => 'ADMIN 3']);
 
 
         factory(App\Level::class)->create(['levelName' => 'Baja']);
@@ -39,13 +39,13 @@ class DatabaseSeeder extends Seeder
 
         //Ahora creamos 20 usuarios
         
-        factory(App\User::class,20)->create()->each(function ($user) { 
+        factory(App\User::class,10)->create()->each(function ($user) { 
 
             $profile = $user->profile_parent()->save(factory(App\Profile_parent::class)->make());
 
             
-            $user->groups()->attach($this->array('PADRES'));
-            
+            //$user->groups()->attach($this->array('PADRES'));
+            $user->groups()->attach($this->array(rand(1,5)));
 
             $user->image()->save(factory(App\Image::class)->make([
                 'url' => 'https://lorempixel.com/90/90/'
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
         });
 
             //Ahora creamos 8 usuarios profesionales
-
+/*
         factory(App\User::class,8)->create()->each(function ($user) { 
 
             $profile = $user->profile_prof()->save(factory(App\Profile_prof::class)->make());
@@ -68,8 +68,8 @@ class DatabaseSeeder extends Seeder
                 'url' => 'https://lorempixel.com/90/90/'
             ]));
 
-        });
-            
+        }); 
+        /*    
         //factory(App\School::class, 20)->create(); // crea 20 escuelas
         factory(App\Category::class)->create(['name' => 'BAJA']);
         factory(App\Category::class)->create(['name' => 'MEDIA']);

@@ -54,7 +54,7 @@ Evolucionar Pacientes
 
             <div class="col d-flex align-items-center p-2">
                 <button class="btn btn-success"><a href="/admin/pacientes/evolucionar-paciente">Evolucionar</a></button>
-                <button class="btn btn-info"><a href="/admin/admin">Menú</a></button>
+                <button class="btn btn-info"><a href="{{route('dashboard')}}">Menú</a></button>
             </div>
 
         </div>

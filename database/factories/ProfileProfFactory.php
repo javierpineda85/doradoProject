@@ -14,6 +14,8 @@ $factory->define(Profile_prof::class, function (Faker $faker) {
         'street_number'   => $faker->randomElement([145, 236, 398, 1234, 890, 900, 2641, 1089]),
         'street_house'    => $faker->randomElement([0, 1, 2, 3]),                      
         'phone'           => $faker->phoneNumber,
+        'locality'        => $faker->word,
+        'city'            => $faker->cityName,
         'specialty'       => $faker->jobTitle,
         'matricula'       => $faker->unique()->randomNumber($nbDigits = 4),
         'venc_matricula'  =>$faker->dateTimeBetween('1900-01-01', 'now'),

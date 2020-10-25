@@ -21,7 +21,7 @@ class PageController extends Controller
 
     public function novedades(){
         $novedades = Novedade::orderBy('created_at','desc')
-                        ->paginate(15);
+                        ->paginate(4);
 
         $vac=compact("novedades");
         return view('web.novedades',$vac);

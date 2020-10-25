@@ -21,10 +21,11 @@ class UserController extends Controller
     return User::where('group_id','=',$id)->get();
   }
   public function listadoUsuarios(Request $req ){ //lista todos los pacientes
-  
-
-        $usuarios = User::orderBy('lastName','asc')
-                        ->paginate(15);
+   
+        $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+                          ->where('baja','=','ACTIVE')                                
+                          ->orderBy('lastName','asc')
+                          ->paginate(15);
        
         $vac=compact("usuarios");
         
@@ -34,10 +35,12 @@ class UserController extends Controller
       public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
   
           $email = $req ->get('email');
-    
-          $usuarios =  User::orderBy('lastName','asc')
-                    ->email($email)
-                    ->paginate(15);
+          $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+                            ->where('baja','=','ACTIVE')
+                            ->email($email)                                
+                            ->orderBy('lastName','asc')
+                            ->paginate(15);
+
           $vac=compact("usuarios");
           return view('/admin/users/listado-de-usuarios',$vac);
         }
@@ -46,17 +49,19 @@ class UserController extends Controller
       public function listarPorApellido(Request $req ){ //lista todos los pacientes por apellido
     
           $lastName = $req ->get('lastName');
-    
-          $usuarios =  User::orderBy('lastName','asc')
-                    ->LastName($lastName)
-                    ->paginate(15);
+          $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+                            ->where('baja','=','ACTIVE')
+                            ->LastName($lastName)                                
+                            ->orderBy('lastName','asc')
+                            ->paginate(15);    
+
           $vac=compact("usuarios");
           return view('/admin/users/listado-de-usuarios',$vac);
         }
         
       public function agregarUsuario(){
 
-        $groups = Group::orderBy('name','ASC')->pluck('name','id');
+        $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
         $vac=compact("groups");
         
         return view('/admin/users/agregar-usuario',$vac);
@@ -81,21 +86,41 @@ class UserController extends Controller
 
       public function modificarUsuario($id){
 
-        $groups = Group::orderBy('name','ASC')->pluck('name','id');
+        $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
         $usuarios = User::where('id','=',$id)->get();
        
         $vac=compact("usuarios","groups");
         return view('/admin/users/modificar-usuario',$vac);
       }
 
-      public function update(UserUpdateRequest $req, $id){
+      public function update(Request $req, $id){
         $usuario = User::find($id);
         
         $usuario->fill($req->all())->save();
 
-        return view('showUser')->with('info','El usuario ha sido modificado!');
+        $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+                          ->where('baja','=','ACTIVE')                                
+                          ->orderBy('lastName','asc')
+                          ->paginate(15);
+
+        $vac=compact("usuarios");
+        return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
     }
 
+    public function delete(Request $req, $id){
+      $newUser=[
+        'baja' => 'DOWN'
+      ];
+    
+      $user = User::where('id',$id)->update($newUser);
+      
+      $usuarios = User::orderBy('lastName','asc')
+                    ->where('baja','=','ACTIVE')
+                    ->paginate(15);
+
+      $vac=compact("usuarios");
+      return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
+    }
 
 
 }

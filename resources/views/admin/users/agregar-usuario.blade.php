@@ -41,7 +41,7 @@ Panel de Control
 
                         <div class="fom-group mt-1">
                             {{Form::label('password','Contraseña: ')}} <br>
-                            {{Form::password('password', null, ['class'=>'form-control',])}}
+                            {{ Form::password('password', ['class' => 'form-control']) }}
                         </div>
                         <div class="fom-group mt-1">
                             {{Form::label('phone','Teléfono: ')}}

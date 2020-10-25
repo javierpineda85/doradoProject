@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Noticias /Listado de Noticias
+/ Profesionales/Elegir Padre
 @endsection
 
 @section('main')
@@ -14,37 +14,27 @@ Panel de Control
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
 
-            <form class="" action="{{route('showTitleNews')}}" method="get">
-                @csrf
-                <div class="input-group">
-                    <span><i class="fas fa-search text-danger mt-2"></i></span>
-                    <input type="text" class="form-control search-input" name="title" value="" placeholder="Buscar por título">
-                </div>
-            </form>
         </div>
-        <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="{{route('showNews')}}">Listar todo</a></button>
-        <button class="btn btn-sm btn-success ml-2"> <a href="{{route('News')}}">Nuevo</a></button>
+       
     </div>
-    <h3 class="text-muted text-center mb-3 mt-3">Listado de Noticias</h3>
+    <h3 class="text-muted text-center mb-3 mt-3">Elegir un Padre</h3>
     <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
-                <th>Fecha</th>
-                <th>Título</th>
-                <th>Subtítulo</th>
-                <th>Cuerpo</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>email</th>
                 <th>&nbsp;</th>
                 
         </thead>
         <tbody>
-        @foreach ($novedades as $noticia)
+        @foreach ($padres as $padre)
             
             <tr>
-                <td> {{$noticia->created_at}} </td>
-                <td> {{$noticia->title}} </td>
-                <td> {{$noticia->subtitle}}</td>
-                <td> {{$noticia->body}}</td>
-                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/noticias/ver-novedad{{$noticia->id}}"><i class="fas fa-search"></i></a></button> </td>
+                <td> {{$padre->lastName}} </td>
+                <td> {{$padre->name}}</td>
+                <td> {{$padre->email}} </td>
+                <td><button class="btn btn-sm btn-info btn-success"> <a href="/admin/pacientes/nuevo-paciente{{$padre->id}}"><i class="fas fa-plus-circle"></i></a></button> </td>
 
             </tr>
         @endforeach
@@ -52,7 +42,7 @@ Panel de Control
     </table>
     <!-- pagination  -->
     
-    {{$novedades->render()}}
+ 
    
     <!-- pagination  -->
 

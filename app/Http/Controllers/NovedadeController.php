@@ -39,18 +39,26 @@ class NovedadeController extends Controller
         return view('admin/noticias/crear-novedad')->with('info','Novedad eliminada permanentemente!');
     }
 
-    public function update(NovedadeUpdateRequest $req, $id){
+    public function update(Request $req, $id){
         $novedad = Novedade::find($id);
         
-        $novedad->fill($req->all())->save();
+        $newNovedad=[
+            'user_id'     => $req->user_id,
+            'title'       => $req->title,
+            'subtitle'    => $req->subtitle,
+            'body'        => $req->body,
+        ];
+          
+        $novedad = Novedade::where('id',$id)->update($newNovedad);
 
         if($req->file('file')){
             $path = Storage::disk('public')
                             ->put('image',$req->file('file'));
-            $novedad->fill(['file'=>asset($path)])->save();
+            $newNovedad->fill(['file'=>asset($path)])->save();
         }
+        //$novedad = Novedade::where('id',$id)->update($newNovedad);
 
-        return back()->with('info','La novedad ha sido creada!');
+        return back()->with('info','La novedad ha sido modificada!');
     }
     
     public function listadoNovedades(Request $req ){ 
@@ -76,7 +84,6 @@ class NovedadeController extends Controller
 
 
     public function VerNovedad($id){
-
 
         $novedades = Novedade::where('id','=',$id)->get();
         $idProf = Novedade::where('id','=',$id)->pluck('user_id');

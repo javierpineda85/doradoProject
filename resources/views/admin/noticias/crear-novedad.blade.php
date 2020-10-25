@@ -17,8 +17,8 @@ Crear Novedad
     </div>
 </div>   
 
- <div class="row col-10">      
-    <form action="/admin/noticias/agregar-noticia" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
+ <div class="row col-12">      
+    <form action="{{route('storeNews')}}" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
                     @csrf
         <div class="row ">
             <div class="col border d-flex align-items-center p-2">
@@ -40,20 +40,19 @@ Crear Novedad
                     <label for="" class="mr-2 font-weight-bold">Contenido: </label> 
                     <textarea class="form-control" name="body" id="" rows="5" cols="1"></textarea>
                 </div>
+                <div class="custom-file col-md-6 m-2">
+                    <input type="file" accept=".jpeg, .jpg, .png" name="file" class="custom-file-input" id="inputGroupFile02">
+                    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Subir Archivo</label>
+                </div>
             </div>
         </div>
 
         <div class="row border"> <!--botones -->
 
-            <div class="col d-flex justify-content-start p-2">
-                <div class="row d-inline">
+            <div class="col">
+                <div class="form-group pt-1">
 
                     <div class="input-group">
-                        
-                        <div class="custom-file col-md-6 m-2">
-                            <input type="file" accept=".jpeg, .jpg, .png" name="file" class="custom-file-input" id="inputGroupFile02">
-                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Subir Archivo</label>
-                        </div>
                         <button class="btn btn-sm btn-success m-1" type="submit">Guardar</button>
                         <button class="btn btn-sm btn-info  m-1" type="reset" name="button">{{ __('Limpiar Campos') }}</button>
                         
