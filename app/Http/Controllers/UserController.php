@@ -22,53 +22,54 @@ class UserController extends Controller
   }
   public function listadoUsuarios(Request $req ){ //lista todos los pacientes
    
-        $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+    $usuarios = User::join("groups","users.group_id","=","groups.group_id")
                           ->where('baja','=','ACTIVE')                                
                           ->orderBy('lastName','asc')
                           ->paginate(15);
        
-        $vac=compact("usuarios");
+    $vac=compact("usuarios");
         
-        return view('/admin/users/listado-de-usuarios',$vac);
-        }
+    return view('/admin/users/listado-de-usuarios',$vac);
+  }
         
-      public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
+    public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
   
-          $email = $req ->get('email');
-          $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+      $email = $req ->get('email');
+      $usuarios = User::join("groups","users.group_id","=","groups.group_id")
                             ->where('baja','=','ACTIVE')
                             ->email($email)                                
                             ->orderBy('lastName','asc')
                             ->paginate(15);
 
-          $vac=compact("usuarios");
-          return view('/admin/users/listado-de-usuarios',$vac);
-        }
+      $vac=compact("usuarios");
+      return view('/admin/users/listado-de-usuarios',$vac);
+  }
      
     
-      public function listarPorApellido(Request $req ){ //lista todos los pacientes por apellido
+  public function listarPorApellido(Request $req ){ //lista todos los pacientes por apellido
     
-          $lastName = $req ->get('lastName');
-          $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+    $lastName = $req ->get('lastName');
+    $usuarios = User::join("groups","users.group_id","=","groups.group_id")
                             ->where('baja','=','ACTIVE')
                             ->LastName($lastName)                                
                             ->orderBy('lastName','asc')
                             ->paginate(15);    
 
-          $vac=compact("usuarios");
-          return view('/admin/users/listado-de-usuarios',$vac);
-        }
+    $vac=compact("usuarios");
+    return view('/admin/users/listado-de-usuarios',$vac);
+  }
         
-      public function agregarUsuario(){
+  public function agregarUsuario(){
 
-        $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
-        $vac=compact("groups");
+    $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
+    $vac=compact("groups");
         
-        return view('/admin/users/agregar-usuario',$vac);
-      }
-      public function store(Request $req){
+    return view('/admin/users/agregar-usuario',$vac);
+  }
+  
+  public function store(Request $req){
         
-        $newUser=[
+    $newUser=[
           'group_id'     => $req->group_id,
           'name'         => $req->name,
           'lastName'     => $req->lastName,
@@ -76,38 +77,60 @@ class UserController extends Controller
           'email'        => $req->email,
           'password'     => bcrypt($req->password),
           'baja'         => 'ACTIVE'
-        ];
+    ];
         
-        $user = User::create($newUser);
+    $user = User::create($newUser);
         
 
-        return back()->with('info','Usuario creado con éxito!');
+    return back()->with('info','Usuario creado con éxito!');
+  }
+
+  public function modificarUsuario($id){
+
+    $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
+     /*$usuarios = User::where('id','=',$id)->get(); */
+    
+    $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+                      ->where('baja','=','ACTIVE') 
+                      ->where('id','=',$id)                               
+                      ->orderBy('lastName','asc')
+                      ->paginate(15);
+
+    $vac=compact("usuarios","groups");
+    return view('/admin/users/modificar-usuario',$vac);
+  }
+
+  public function update(Request $req, $id){
+    $usuario = User::find($id);
+   
+    if($req->group_id === null){  // si el campo esta nulo no lo va a modificar
+      
+      $newUser=[
+        'name'         => $req->name,
+        'lastName'     => $req->lastName,
+        'phone'        => $req->phone,
+        'email'        => $req->email,
+        'baja'         => 'ACTIVE'
+      ];
+      $user = User::where('id',$id)->update($newUser);
+      
+    }else {
+      
+      $usuario->fill($req->all())->save();
+
     }
 
-      public function modificarUsuario($id){
 
-        $groups = Group::orderBy('group_name','ASC')->pluck('group_name','group_id');
-        $usuarios = User::where('id','=',$id)->get();
-       
-        $vac=compact("usuarios","groups");
-        return view('/admin/users/modificar-usuario',$vac);
-      }
-
-      public function update(Request $req, $id){
-        $usuario = User::find($id);
-        
-        $usuario->fill($req->all())->save();
-
-        $usuarios = User::join("groups","users.group_id","=","groups.group_id")
+    $usuarios = User::join("groups","users.group_id","=","groups.group_id")
                           ->where('baja','=','ACTIVE')                                
                           ->orderBy('lastName','asc')
                           ->paginate(15);
 
-        $vac=compact("usuarios");
-        return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
-    }
+    $vac=compact("usuarios");
+    return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
+  }
 
-    public function delete(Request $req, $id){
+  public function delete(Request $req, $id){
       $newUser=[
         'baja' => 'DOWN'
       ];
@@ -120,7 +143,7 @@ class UserController extends Controller
 
       $vac=compact("usuarios");
       return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
-    }
+  }
 
 
 }

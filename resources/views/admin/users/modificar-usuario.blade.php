@@ -48,9 +48,14 @@ Panel de Control
                             {{Form::label('email','Correo electrónico: ')}}
                             {{Form::text('email', $usuario->email, ['class'=>'form-control',])}}
                         </div>
+                        <div class="fom-group mt-1 pt-3">
+                            {{Form::label('old_rol','Rol Actual: ')}}
+                            {{Form::label('old_rol', $usuario->group_name, ['class'=>'form-control',])}}
+                        </div>
+
                         <div class="form-group mt-1 mb-3 pt-2 align-items-center">
                             {{ Form::label('group_id', 'Roles')}}
-                            {{ Form::select('group_id', $groups, null, ['class'=>'form-control']) }} 
+                            {{ Form::select('group_id', $groups, null,['placeholder' => 'Seleccione un nuevo rol', 'class'=>'form-control']) }} 
 
                         </div>
                             {{ Form::submit('Actualizar',['class'=> 'btn btn-sm btn-success'])}}
