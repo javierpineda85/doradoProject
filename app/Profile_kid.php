@@ -9,7 +9,7 @@ class Profile_kid extends Model
 
     protected $fillable=['profile_parent_id','file','name','lastName',
                         'dni','genre','birthday',
-                        'diagnostic','social_medicine','baja']; 
+                        'diagnostic','socialMedicine','afiliado','ingreso','baja']; 
     
     public function profile_kid(){
         return $this->belongsTo(Profile_parent::class);

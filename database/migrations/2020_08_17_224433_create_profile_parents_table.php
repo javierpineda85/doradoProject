@@ -17,7 +17,9 @@ class CreateProfileParentsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->nullable()->unsigned();
             $table->integer('profile_kid_id')->nullable()->unsigned();
-            $table->integer('dni')->nullable();           
+            $table->string('parentName');
+            $table->string('parentLastname');
+            $table->integer('parentDni')->nullable();           
             $table->string('numberPhone');
             $table->string('phone2')->nullable();
             $table->enum('baja',['ACTIVE','DOWN'])->default('ACTIVE');

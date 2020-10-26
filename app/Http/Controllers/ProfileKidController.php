@@ -25,8 +25,7 @@ class ProfileKidController extends Controller
                     ->get();
 
     $vac = compact("padres");
-    
-   
+      
     return view('/admin/pacientes/nuevo-paciente',$vac);
   }
 
@@ -52,6 +51,8 @@ class ProfileKidController extends Controller
     return view('/admin/pacientes/listado-de-pacientes',$vac);
   }
 
+ /* MODIFICAR PACIENTES*/  
+  
   public function modificarPaciente($id){
 
     $pacientes = Profile_kid::find($id);
@@ -63,11 +64,13 @@ class ProfileKidController extends Controller
                                 ->get();
     $padres = Profile_parent::Join("profile_kids","profile_parents.profile_kid_id","=","profile_kids.id")
                                 ->where("profile_parents.profile_kid_id","=",$id)
-                                ->get();
-                                
+                                ->get(); 
+                        
     $vac=compact("pacientes", "escuela","domicilio", "padres");
     return view('/admin/pacientes/gestion-de-pacientes',$vac);
   }
+
+ /* EVOLUCIONAR PACIENTES*/  
 
   public function evolucionarPaciente($id){
 
@@ -85,6 +88,7 @@ class ProfileKidController extends Controller
     return view('/admin/pacientes/historia-clinica',$vac);
   }
 
+ /* STORE PACIENTES*/ 
 
   public function store(Request $req){ // Funcion de guardar con el constructor de esta forma porque no funcionaba de otra
     
@@ -96,7 +100,8 @@ class ProfileKidController extends Controller
     else{
       $profile_kid_id = $profile_kid_id + 1;
     }
-      
+    
+    //Crea registro de paciente en DB
     $newkid = [
         'profile_parent_id'  => $req->user_id,
         'name'               => $req->name,
@@ -114,18 +119,21 @@ class ProfileKidController extends Controller
     
     $kid = Profile_kid::create($newkid);
       
-     //solo actualiza datos
+     //Crea registro de padre en DB
      $newkidParent = [
       'user_id'           => $req->user_id,
       'profile_kid_id'    => $profile_kid_id,
+      'parentName'        => $req->parentName,
+      'parentLastname'    => $req->parentLastname,
       'numberPhone'       => $req->numberPhone,
       'phone2'            => $req->phone2,
-      'dni'               => $req->dni_parent,
+      'parentDni'         => $req->dni_parent,
       'baja'              => 'ACTIVE'
     ];
     
     $parentUpdate = Profile_parent::create($newkidParent);
 
+    //Crea registro de domicilio en DB
     $newKidLocation = [
         'profile_kid_id'     => $profile_kid_id,
         'street'             => $req->street,
@@ -134,9 +142,10 @@ class ProfileKidController extends Controller
         'locality'           => $req->locality,
         'city'               => $req->city
     ];
-      
+    
     $kidLocation = Location::create($newKidLocation); 
-      
+    
+    //Crea registro de escuela en DB
     $newKidSchool = [
         'profile_kid_id'     => $profile_kid_id,
         'school_name'        => $req->school_name,
@@ -145,11 +154,10 @@ class ProfileKidController extends Controller
         'schedule'           => $req->schedule,
         'street'             => $req->street,
         'street_number'      => $req->street_number,
-        'street_house'       => $req->street_house,
-        'locality'           => $req->locality,
-        'city'               => $req->city,
-        'contact_name'       => $req->contact_name,
-        'contact_phone'      => $req->contact_phone
+        'locality'           => $req->street_locality,
+        'city'               => $req->street_city,
+        'contact_name'       => $req->school_contact_name,
+        'contact_phone'      => $req->school_contact_phone
     ];
 
 
