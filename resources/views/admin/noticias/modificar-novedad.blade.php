@@ -82,6 +82,14 @@ Modificar Novedad
         </div>
 
     </form>
+    </div>
+    <div class="row">
+        <form class="pt-3" action="/admin/noticias/borrar-novedad{{$noticia->id}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+            <input type="hidden" name="id" value="{{$noticia->id}}">
+            <button type="submit" class="btn btn-sm btn-danger">Dar de Baja</button>
+        </form>
+    </div>
     @endforeach
     </div>
 </div>

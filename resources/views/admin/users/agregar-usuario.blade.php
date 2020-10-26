@@ -53,7 +53,7 @@ Panel de Control
                         </div>
 
     	                {{ Form::submit('Guardar',['class'=> 'btn btn-sm btn-success'])}}
-                        {{ Form::submit('Borrar',['class'=> 'btn btn-sm btn-info'])}}
+                        {{ Form::reset('Borrar',['class'=> 'btn btn-sm btn-info'])}}
                         
 
                     </form>
