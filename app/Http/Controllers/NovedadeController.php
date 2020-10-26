@@ -17,7 +17,7 @@ class NovedadeController extends Controller
       } 
     
     
-      public function crearNovedad(){
+    public function crearNovedad(){
         return view('admin/noticias/crear-novedad');
     }
     
@@ -46,16 +46,21 @@ class NovedadeController extends Controller
             'user_id'     => $req->user_id,
             'title'       => $req->title,
             'subtitle'    => $req->subtitle,
-            'body'        => $req->body,
+            'body'        => $req->body
         ];
           
         $novedad = Novedade::where('id',$id)->update($newNovedad);
+        /*
+        if($req->file != null){
+            if($req->file('file')){
+                $path = Storage::disk('public')
+                                ->put('image', $req->file('file'));
+                $newNovedad->fill(['file'=>asset($path)]->save());
 
-        if($req->file('file')){
-            $path = Storage::disk('public')
-                            ->put('image',$req->file('file'));
-            $newNovedad->fill(['file'=>asset($path)])->save();
-        }
+            }
+
+        } */
+
         //$novedad = Novedade::where('id',$id)->update($newNovedad);
 
         return back()->with('info','La novedad ha sido modificada!');
@@ -80,7 +85,7 @@ class NovedadeController extends Controller
                   ->paginate(10);
         $vac=compact("novedades");
         return view('/admin/noticias/listado-de-novedades',$vac);
-      }
+    }
 
 
     public function VerNovedad($id){

@@ -89,7 +89,7 @@ Route::post('/admin/noticias/agregar-noticia','NovedadeController@store')->name(
 Route::get('/admin/noticias/crear-novedad','NovedadeController@crearNovedad')->name('News');
 Route::post('/admin/noticias/modificar-novedad-{id}','NovedadeController@update')->name('updateNews');
 Route::get('/admin/noticias/ver-novedad{id?}','NovedadeController@verNovedad')->name('seeNews');
-Route::post('/admin/noticias/borrar-novedad{id}','NovedadeController@deleteNovedad')->name('deleteNews');
+Route::post('/admin/noticias/borrar-novedad{id?}','NovedadeController@deleteNovedad')->name('deleteNews');
 Route::get('/admin/noticias/listado-de-novedades','NovedadeController@listadoNovedades')->name('showNews');
 Route::get('/admin/noticias/listado-de-novedadesPorTitulo','NovedadeController@listarPorTituloNovedades')->name('showTitleNews');
 /*
