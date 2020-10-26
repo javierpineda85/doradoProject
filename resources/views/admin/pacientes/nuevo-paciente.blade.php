@@ -11,14 +11,14 @@ Cargar Historia Clinica
 
 @section('main')
 
-<div class="row pt-md-5 mt-md-3 mb-5">
+<div class="row pt-md-5 mt-md-3 mb-5 ">
     <div class="p-3 m-3">
         <h3>Nueva Historia Clínica</h3>
     </div>
 
     <!-- INICIO DE FORMULARIO -->
 
-    <form action="{{route('storeKid')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('storeKid')}}"  method="post" enctype="multipart/form-data">
     @csrf
         <!-- DATOS PERSONALES -->
 
@@ -49,9 +49,9 @@ Cargar Historia Clinica
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip02 font-weight-bold">Género</label>
                 <select name="genre" class="custom-select">
-                    <option value="m">Masculino</option>
-                    <option value="f">Femenino</option>
-                    <option value="o">Otro</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
         
@@ -139,7 +139,7 @@ Cargar Historia Clinica
             <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername font-weight-bold">D.N.I.</label>
                 <div class="input-group">
-                    <input type="text" name="dni_parent" class="form-control" value="{{$padre->dni}}"required>
+                    <input type="text" name="dni_parent" class="form-control" required>
                 </div>
             </div>
         </div>

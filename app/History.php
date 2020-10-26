@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class History extends Model
 {
-    protected $fillable=['user_id','profile_kid_id','priority','body','estatus']; 
+    protected $fillable=['user_id','profile_kid_id','tracking_number','date','priority','body','status']; 
 
     public function user(){
         return $this->belongsTo(User::class);

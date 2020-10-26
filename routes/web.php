@@ -40,6 +40,16 @@ Route::get('/admin/pacientes/modificar-paciente-{id?}','ProfileKidController@mod
 Route::get('/admin/pacientes/nuevo-paciente{id?}','ProfileKidController@nuevoPaciente')->name('newKid');
 Route::post('/admin/pacientes/nuevo-paciente','ProfileKidController@store')->name('storeKid');
 Route::get('/admin/pacientes/historia-clinica-{id}','ProfileKidController@historiaClinica')->name('history');
+Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@store');
+
+/*
+|--------------------------------------------------------------------------
+HISTORY CONTROLLER
+|--------------------------------------------------------------------------
+*/
+Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@store')->name('storeHistory');
+
+
 
 /*
 |--------------------------------------------------------------------------
