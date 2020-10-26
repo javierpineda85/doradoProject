@@ -65,42 +65,77 @@ class ProfileKidController extends Controller
     $padres = Profile_parent::Join("profile_kids","profile_parents.profile_kid_id","=","profile_kids.id")
                                 ->where("profile_parents.profile_kid_id","=",$id)
                                 ->get(); 
-                        
+                   
     $vac=compact("pacientes", "escuela","domicilio", "padres");
     return view('/admin/pacientes/gestion-de-pacientes',$vac);
   }
 
- /* EVOLUCIONAR PACIENTES*/  
+  public function update(Request $req){
 
-  public function evolucionarPaciente($id){
+    $idKid = $req->profile_kid_id;
 
-    $pacientes = Profile_kid::where('id','=',$id)->get();
-                               
-    $vac=compact("pacientes");
-    return view('/admin/pacientes/evolucionar-paciente',$vac);
-  }
+    $newkid = [
+      'name'               => $req->name,
+      'lastName'           => $req->lastName,
+      'file'               => $req->file,
+      'dni'                => $req->dni,
+      'genre'              => $req->genre,
+      'birthday'           => $req->birthday,
+      'diagnostic'         => $req->diagnostic,
+      'socialMedicine'     => $req->socialMedicine,
+      'afiliado'           => $req->afiliado,
+      'ingreso'            => $req->ingreso
+    ];
+    
+    $kid = Profile_kid::where('id',$idKid)->update($newkid);
 
-  public function historiaClinica($id){
-    $pacientes = Profile_kid::where('id','=',$id)->get();
-                                        
-    $vac=compact("pacientes");
+    //Modifica el registro de padre en DB
+    $newkidParent = [
+      'parentName'        => $req->parentName,
+      'parentLastname'    => $req->parentLastname,
+      'numberPhone'       => $req->numberPhone,
+      'phone2'            => $req->phone2,
+      'parentDni'         => $req->dni_parent
+     ];
+    
+    $parentUpdate = Profile_parent::where('profile_kid_id',$idKid)->update($newkidParent);
 
-    return view('/admin/pacientes/historia-clinica',$vac);
+    //Modifica el registro de domicilio en DB
+    $newKidLocation = [
+        'street'             => $req->street,
+        'street_number'      => $req->street_number,
+        'street_house'       => $req->street_house,
+        'locality'           => $req->locality,
+        'city'               => $req->city
+    ];
+    
+    $kidLocation = Location::where('profile_kid_id',$idKid)->update($newKidLocation); 
+    
+    //Modifica el registro de escuela en DB
+    $newKidSchool = [
+        'school_name'        => $req->school_name,
+        'school_level'       => $req->school_level,
+        'school_turn'        => $req->school_turn,
+        'schedule'           => $req->schedule,
+        'street'             => $req->street,
+        'street_number'      => $req->street_number,
+        'locality'           => $req->school_locality,
+        'city'               => $req->school_city,
+        'contact_name'       => $req->school_contact_name,
+        'contact_phone'      => $req->school_contact_phone
+    ];
+
+
+    $kidSchool = School::where('profile_kid_id',$idKid)->update($newKidSchool); 
+
+    return back()->with('info','El paciente ha sido modificado con éxito!');
   }
 
  /* STORE PACIENTES*/ 
 
   public function store(Request $req){ // Funcion de guardar con el constructor de esta forma porque no funcionaba de otra
     
-    $profile_kid_id = Profile_kid::all()->last();
-       
-    if($profile_kid_id = NULL){
-      $profile_kid_id = "1";
-    }
-    else{
-      $profile_kid_id = $profile_kid_id + 1;
-    }
-    
+   
     //Crea registro de paciente en DB
     $newkid = [
         'profile_parent_id'  => $req->user_id,
@@ -118,7 +153,10 @@ class ProfileKidController extends Controller
     ];
     
     $kid = Profile_kid::create($newkid);
-      
+     
+    $profile_kid_id = Profile_kid::pluck('id')->last();
+    
+
      //Crea registro de padre en DB
      $newkidParent = [
       'user_id'           => $req->user_id,
@@ -154,8 +192,8 @@ class ProfileKidController extends Controller
         'schedule'           => $req->schedule,
         'street'             => $req->street,
         'street_number'      => $req->street_number,
-        'locality'           => $req->street_locality,
-        'city'               => $req->street_city,
+        'locality'           => $req->school_locality,
+        'city'               => $req->school_city,
         'contact_name'       => $req->school_contact_name,
         'contact_phone'      => $req->school_contact_phone
     ];
@@ -164,5 +202,24 @@ class ProfileKidController extends Controller
     $kidSchool = School::create($newKidSchool); 
 
     return back()->with('info','El paciente ha sido dado de alta con éxito!');
-  }  
+  } 
+  
+  public function deletePaciente(Request $req){
+
+   
+    $newkid = [
+      'baja' => 'DOWN'
+    ];
+    
+    $kid = Profile_kid::where('profile_kid_id',$idKid)->update($newkid);
+ 
+    $newkidParent = [
+      'baja' => 'DOWN'
+    ];
+    
+    $parentUpdate = Profile_parent::where('profile_kid_id',$idKid)->update($newkidParent);
+
+
+    return back()->with('info','El paciente ha sido dado de baja con éxito!');
+  }
 }

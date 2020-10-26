@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
-        //Ahora creamos 20 usuarios
+        //Ahora creamos 10 usuarios
         
         factory(App\User::class,10)->create()->each(function ($user) { 
 

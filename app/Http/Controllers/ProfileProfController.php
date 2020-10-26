@@ -78,7 +78,7 @@ class ProfileProfController extends Controller
                                   ->paginate(15); 
         
         $vac=compact("profesionales");
-        return back()->with($vac);
+        return view('/admin/profesionales/listado-de-profesionales',$vac);
     }
 
     public function modificarProfesional($id){

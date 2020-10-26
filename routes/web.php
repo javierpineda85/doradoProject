@@ -35,18 +35,20 @@ Auth::routes();
 
 Route::get('/admin/pacientes/listado-de-pacientes','ProfileKidController@listadoPaciente')->name('showKids');
 Route::get('/admin/pacientes/listado-de-pacientesPorApellido', 'ProfileKidController@listarPorApellido')->name('showKidLastname'); //lista todos los usuarios por email
-Route::get('/admin/pacientes/evolucionar-paciente-{id}','ProfileKidController@evolucionarPaciente');
 Route::get('/admin/pacientes/modificar-paciente-{id?}','ProfileKidController@modificarPaciente')->name('updateKid');
+Route::post('/admin/pacientes/modificar-paciente-{id?}','ProfileKidController@update');
 Route::get('/admin/pacientes/nuevo-paciente{id?}','ProfileKidController@nuevoPaciente')->name('newKid');
 Route::post('/admin/pacientes/nuevo-paciente','ProfileKidController@store')->name('storeKid');
-Route::get('/admin/pacientes/historia-clinica-{id}','ProfileKidController@historiaClinica')->name('history');
-Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@store');
+Route::post('/admin/pacientes/eliminar-paciente-{id?}','ProfileKidController@deletePaciente')->name('deleteKid');
+
 
 /*
 |--------------------------------------------------------------------------
 HISTORY CONTROLLER
 |--------------------------------------------------------------------------
 */
+Route::get('/admin/pacientes/evolucionar-paciente-{id}','HistoryController@evolucionarPaciente');
+Route::get('/admin/pacientes/historia-clinica-{id}','HistoryController@historiaClinica')->name('history');
 Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@store')->name('storeHistory');
 
 

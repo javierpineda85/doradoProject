@@ -46,8 +46,9 @@ Panel de Control
                 <td> {{$paciente->birthday}}</td>
                 <td> {{$paciente->diagnostic}}</td>
                 <td> {{$paciente->socialMedicine}}</td>
-                <td><button class="btn btn-sm btn-info btn-secondary"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="fas fa-search"></i></a></button></td>
+                <td><button class="btn btn-sm btn-info"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="far fa-eye"></i></a></button></td>
                 <td><button class="btn btn-sm btn-warning"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}"><i class="fas fa-pencil-alt"></i></a></button></td>
+                <td><button class="btn btn-sm btn-success"><a href="/admin/pacientes/historia-clinica-{{$paciente->id}}"><i class="fas fa-file-alt"></i></a</button></td>
             </tr>
             @endforeach
         </tbody>

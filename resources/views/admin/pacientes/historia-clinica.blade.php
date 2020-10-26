@@ -27,38 +27,42 @@ Evolucionar Pacientes
                 <Label class="font-weight-bold">Diagnóstico: </Label>
                 <label for=""> {{$paciente->diagnostic}}</label>
             </div>
-        </div>
-        <div class="row"> <!--Fecha terapeuta area -->
-        <table class="table table-sm table-hover">
-            <thead>
-                <tr class="text-muted">
-                    <th>Fecha</th>
-                    <th>Profesional</th>
-                    <th>Observación</th>
-                    <th>Prioridad</th>
-            </thead>
-            <tbody>
-                
-                <tr>                    
-                    <td> $paciente->fecha</td>
-                    <td> $paciente->profesional </td>
-                    <td> $paciente->observación</td>
-                    <td> $paciente->prioridad</td>
-                </tr>
-            
-            </tbody>
-        </table>
-        </div>
 
-        <div class="row border"> <!--botones -->
-
-            <div class="col d-flex align-items-center p-2">
-                <button class="btn btn-success"><a href="/admin/pacientes/evolucionar-paciente">Evolucionar</a></button>
-                <button class="btn btn-info"><a href="{{route('dashboard')}}">Menú</a></button>
+            <div class="col border d-flex align-items-center p-2">
+                <button class="btn btn-sm btn-success m-1"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}">Evolucionar</a></button>
+                <button class="btn btn-sm btn-info m-1"><a href="{{route('dashboard')}}">Menú</a></button>
             </div>
-
         </div>
+        @endforeach
+
+        @foreach($histories as $storie)
+        <div class="row"> <!--Fecha terapeuta area -->
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr class="text-muted">
+                        <th>Fecha</th>
+                        <th>Profesional</th>
+                        <th>Observación</th>
+                        <th>Prioridad</th>
+                </thead>
+                <tbody>
+                    
+                    <tr>                    
+                        <td> {{$storie->date}}</td>
+                        <td> {{$storie->name}} {{$storie->lastName}} </td>
+                        <td> {{$storie->body}}</td>
+                        <td> {{$storie->priority}}</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+        
         @endforeach  
     </div>
 </div>
+    <!-- pagination  -->
+    {{$histories->render()}}
+   
+   <!-- pagination  -->
 @endsection
