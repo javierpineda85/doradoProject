@@ -50,34 +50,38 @@ class ProfileProfController extends Controller
 
       $vac=compact("profesionales");
       return view('/admin/profesionales/listado-de-profesionales',$vac);
-      }
+  }
       
     public function listarPorMail(Request $req ){ 
 
         $email = $req ->get('email');
   
-        $profesionales =  Profile_prof::orderBy('lastName','asc')
-                  ->email($email)
-                  ->where('baja','!=','DOWN')
-                  ->paginate(10);
+        $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
+                                ->email($email)
+                                ->where('profile_profs.baja','!=','DOWN')                                
+                                ->orderBy('lastName','asc')
+                                ->paginate(15); 
+
         $vac=compact("profesionales");
         return view('/admin/profesionales/listado-de-profesionales',$vac);
-      }
+    }
    
   
     public function listarPorApellido(Request $req ){ 
   
         $lastName = $req ->get('lastName');
-  
-        $profesionales =  Profile_prof::orderBy('lastName','asc')
-                  ->LastName($lastName)
-                  ->where('baja','!=','DOWN')
-                  ->paginate(10);
-        $vac=compact("profesionales");
-        return back()->with($var);
-      }
 
-      public function modificarProfesional($id){
+        $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
+                                  ->LastName($lastName)
+                                  ->where('profile_profs.baja','!=','DOWN')                                
+                                  ->orderBy('lastName','asc')
+                                  ->paginate(15); 
+        
+        $vac=compact("profesionales");
+        return back()->with($vac);
+    }
+
+    public function modificarProfesional($id){
 
         $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
                         ->where('profile_profs.user_id','=',$id)
@@ -85,9 +89,9 @@ class ProfileProfController extends Controller
                         
         $vac=compact("profesionales");
         return view('/admin/profesionales/gestion-de-profesional',$vac);
-      }
+    }
 
-      public function update(Request $req, $id){
+    public function update(Request $req, $id){
         
         $newUser=[
           'group_id'     => $req->group_id,
@@ -121,17 +125,17 @@ class ProfileProfController extends Controller
           'rnp'             => $req->rnp,
           'venc_rnp'        => $req->venc_rnp,
           'baja'            => false
-      ];
+        ];
       
+      $Profe = Profile_prof::where('user_id',$id)->update($newProfe);
+
       if($req->file('file')){
         $path = Storage::disk('public')
                         ->put('image',$req->file('file'));
         $newProfe->fill(['file'=>asset($path)])->save();
       }
-
-        $Profe = Profile_prof::where('user_id',$id)->update($newProfe);
         
-        $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
+      $profesionales = Profile_prof::join("users","profile_profs.user_id","=","users.id")
                                       ->orderBy('lastName','asc')
                                       ->paginate(15); 
 
@@ -139,7 +143,7 @@ class ProfileProfController extends Controller
       return view('/admin/profesionales/listado-de-profesionales',$vac)->with('info','El usuario ha sido modificado!');
     }
 
-      public function store(Profile_profStoreRequest $req){ // Funcion de guardar con el constructor de esta forma porque no funcionaba de otra
+    public function store(Profile_profStoreRequest $req){ // Funcion de guardar con el constructor de esta forma porque no funcionaba de otra
        
         $newProfe = [
           'user_id'         => $req->user_id,
@@ -162,7 +166,12 @@ class ProfileProfController extends Controller
       ];
       
         $Profe = Profile_prof::create($newProfe);
-
+       
+        if($req->file('file')){
+          $path = Storage::disk('public')
+                          ->put('image',$req->file('file'));
+          $newProf->fill(['file'=>asset($path)])->save();
+      }
         return back()->with('info','El Profesional has sido creado con exito!');
     }
 
@@ -190,5 +199,6 @@ class ProfileProfController extends Controller
       $vac=compact("usuarios");
       return view('/admin/users/listado-de-usuarios',$vac)->with('info','El usuario ha sido modificado!');
     }
+
 
 }

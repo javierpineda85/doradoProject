@@ -29,18 +29,12 @@ Cargar Historia Clinica
             <div class="col-md-6 mb-3">
             
                 <label for="validationTooltip01 font-weight-bold">Nombres</label>
-                <input type="text" name="name" class="form-control" id="validationTooltip01"   required>
-                <div class="valid-tooltip">
-                    Correcto!
-                </div>
+                <input type="text" name="name" class="form-control" required>
             </div>
         
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip02 font-weight-bold">Apellidos</label>
-                <input type="text" name="lastName" class="form-control" id="validationTooltip02"  required>
-                <div class="valid-tooltip">
-                    Correcto!
-                </div>
+                <input type="text" name="lastName" class="form-control" required>
             </div>
         </div>
 
@@ -48,10 +42,7 @@ Cargar Historia Clinica
             <div class="col-md-4 mb-3">
                 <label for="validationTooltipUsername font-weight-bold">D.N.I.</label>
                 <div class="input-group">
-                    <input type="text" name="dni" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                        Por favor ingresa todo junto sin espacio.
-                    </div>
+                    <input type="text" name="dni" class="form-control" required>
                 </div>
             </div>
         
@@ -67,20 +58,15 @@ Cargar Historia Clinica
             <div class="col-md-4 mb-3">
                 <label for="validationTooltipUsername font-weight-bold">Fecha de Nac.</label>
                 <div class="input-group">
-                    <input type="date" name="birthday" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                    No te olvides de llenar este campo.
-                    </div>
+                    <input type="date" name="birthday" class="form-control" required>
                 </div>
             </div>
         </div>
         <div class="form-row">  <!-- Diagnostico Clinico / Foto perfil -->
             <div class="col-md-8 mb-3">
                 <label for="validationTooltip02 font-weight-bold">Diagnóstico Clínico</label>
-                <input type="text" name="diagnostic" class="form-control" id="validationTooltip02"  required>
-                <div class="valid-tooltip">
-                    Correcto!
-                </div>
+                <input type="text" name="diagnostic" class="form-control" required>
+
             </div>
         </div>
 
@@ -94,44 +80,29 @@ Cargar Historia Clinica
         <div class="form-row"> <!-- calle, altura, depto -->
             <div class="col-md-8 mb-3">
                 <label for="validationTooltip03 font-weight-bold">Calle / Barrio</label>
-                <input type="text" name="street" class="form-control" id="validationTooltip03"  required>
-                <div class="invalid-tooltip">
-                    Por favor completa con la calle o barrio.
-                </div>
+                <input type="text" name="street" class="form-control" required>
             </div>
         
             <div class="col-md-2 mb-3">
                 <label for="validationTooltip04 font-weight-bold">Nro / Mna</label>
-                <input type="text" name="street_number" class="form-control" id="validationTooltip04" >
-                <div class="invalid-tooltip">
-                    Recuerda colocar la altura o manzana.
-                </div>
+                <input type="text" name="street_number" class="form-control">
             </div>
         
             <div class="col-md-2 mb-3">
                 <label for="validationTooltip05 font-weight-bold">Depto / Casa</label>
-                <input type="text" name="street_house" class="form-control" id="validationTooltip05">
-                <div class="invalid-tooltip">
-                    Recuerda colocar también el departamento o casa.
-                </div>
+                <input type="text" name="street_house" class="form-control">
             </div>
         </div>
 
         <div class="form-row"> <!-- localidad / provincia -->
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip03 font-weight-bold">Localidad</label>
-                <input type="text" name="locality" class="form-control" id="validationTooltip03" required>
-                <div class="invalid-tooltip">
-                    Por favor completa con la calle o barrio.
-                </div>
+                <input type="text" name="locality" class="form-control" required>
             </div>
         
             <div class="col-md-6 mb-3">
                 <label for="validationTooltip04 font-weight-bold">Provincia</label>
-                <input type="text" name="city" class="form-control" id="validationTooltip04" required>
-                <div class="invalid-tooltip">
-                    Recuerda colocar la altura o manzana.
-                </div>
+                <input type="text" name="city" class="form-control" required>
             </div>
 
         </div>
@@ -140,38 +111,35 @@ Cargar Historia Clinica
 
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip04 font-weight-bold">Teléfono de Contacto</label>
-                <input type="text" name="numberPhone" class="form-control" id="validationTooltip04" value="{{$padre->phone}}" required>
-                <div class="invalid-tooltip">
-                    Este campo también debes completarlo.
-                </div>
-            </div>
+                <input type="text" name="numberPhone" class="form-control" value="{{$padre->phone}}" required>
+             </div>
             
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip05 font-weight-bold">Teléfono de emergencia</label>
-                <input type="text" name="phone2" class="form-control" id="validationTooltip05"  required>
-                <div class="invalid-tooltip">
-                    El teléfono de urgencias también es importante tenerlo.
-                </div>
+                <input type="text" name="phone2" class="form-control" required>
             </div>
             
         </div>
         <div class="form-row">  <!-- Nombre Responsable legar y DNI -->
-            <div class="col-md-5 mb-3">
-                <label for="validationTooltip02 font-weight-bold">Nombe del Responsable Legal</label>
-                <input type="hidden" name="user_id" value="{{$padre->id}}">
-                <input type="text" class="form-control" id="validationTooltip02" value="{{$padre->lastName}} {{$padre->name}}" required>
-                <div class="valid-tooltip">
-                    Correcto!
-                </div>
+            <label for="validationTooltip02 font-weight-bold"> Responsable Legal</label>
+            <input type="hidden" name="user_id" value="{{$padre->id}}">
+        </div>
+        <div class="form-row">    
+            <div class="col-md-3 mb-3">
+                <label for="validationTooltipUsername font-weight-bold">Nombre: </label>
+                <input type="text" name="parentName" class="form-control" value="{{$padre->name}}" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                
+                <label for="validationTooltipUsername font-weight-bold">Apellido: </label>   
+                <input type="text" name="parentLastname" class="form-control" value="{{$padre->lastName}}" required>
+                
             </div>
             
-            <div class="col-md-3 mb-2">
+            <div class="col-md-3 mb-3">
                 <label for="validationTooltipUsername font-weight-bold">D.N.I.</label>
                 <div class="input-group">
-                    <input type="text" name="dni_parent" class="form-control" id="validationTooltipUsername"  aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                        Por favor ingresa todo junto sin espacio.
-                    </div>
+                    <input type="text" name="dni_parent" class="form-control" value="{{$padre->dni}}"required>
                 </div>
             </div>
         </div>
