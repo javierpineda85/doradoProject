@@ -258,9 +258,6 @@ Cargar Historia Clinica
                 <label for="validationTooltipUsername font-weight-bold">Obra Social</label>
                 <div class="input-group">
                     <input type="text" name="socialMedicine" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                        Por favor no te olvides de completar aquí.
-                    </div>
                 </div>
             </div>
 
@@ -268,9 +265,6 @@ Cargar Historia Clinica
                 <label for="validationTooltipUsername font-weight-bold">Nº de afiliado</label>
                 <div class="input-group">
                     <input type="text" name="afiliado" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-                    <div class="invalid-tooltip">
-                        Por favor ingresa todo junto sin espacio.
-                    </div>
                 </div>
             </div>
 
@@ -279,15 +273,12 @@ Cargar Historia Clinica
         <div class="form-row"> <!-- Domicilio / fecha de ingreso -->
             <div class="col-md-8 mb-3">
                 <label for="validationTooltip03 font-weight-bold">Domicilio Obra Social</label>
-                <input type="text" name="" class="form-control" id="validationTooltip03">
-                <div class="invalid-tooltip">
-                    Por favor completa el domicilio.
-                </div>
+                <input type="text" name="socialMedicineAddress" class="form-control">
             </div>
             
             <div class="col-md-4 mb-3">
                 <label for="validationTooltip04 font-weight-bold">Fecha de Ingreso</label>
-                <input type="date" name="ingreso" class="form-control" id="validationTooltip04"  required>
+                <input type="date" name="ingreso" class="form-control" required>
                 <div class="invalid-tooltip">
                     Este campo también debes completarlo.
                 </div>

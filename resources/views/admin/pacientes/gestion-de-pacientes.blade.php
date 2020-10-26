@@ -257,7 +257,7 @@ Cargar Historia Clinica
             <div class="form-row"> <!-- Domicilio / fecha de ingreso -->
                 <div class="col-md-8 mb-3">
                     <label for="validationTooltip03">Domicilio Obra Social</label>
-                    <input type="text" class="form-control" value="" required>
+                    <input type="text" class="form-control" name="socialMedicineAddress" value="{{$pacientes->socialMedicineAddress}}" required>
                 </div>
                 
                 <div class="col-md-4 mb-3">

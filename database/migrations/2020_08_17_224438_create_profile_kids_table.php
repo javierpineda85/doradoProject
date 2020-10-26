@@ -24,6 +24,7 @@ class CreateProfileKidsTable extends Migration
             $table->date('birthday');            
             $table->string('diagnostic');
             $table->string('socialMedicine')->nullable();
+            $table->string('socialMedicineAddress')->nullable();
             $table->string('afiliado')->nullable();
             $table->date('ingreso');
             $table->enum('baja',['ACTIVE','DOWN'])->default('ACTIVE');
