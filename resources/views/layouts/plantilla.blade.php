@@ -6,24 +6,26 @@
 
 
     <meta charset="UTF-8">
+    @yield('canonical')
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="dorado centro de investigación y rehabilitación">
-    <meta name="description" content="Somos un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.">
+    @yield('description')
 
     <!--  title -->
 
    <title>@yield('title')</title>
-
+   
+    <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
     <!-- Animation CSS -->
-    <link rel="stylesheet" href="../../css/animation.min.css">
+    <link rel="stylesheet" href="../../css/animation.min.css">  
 
     <!-- Font Icons CSS -->
-    <link rel="stylesheet" href="../../css/font-awesome.min.css"> <!--version 5.12 -->
-    <link rel="stylesheet" href="../../css/ionicons.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">  
+    <link rel="stylesheet" href="../../css/ionicons.min.css"> 
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../css/style.css">
@@ -46,19 +48,14 @@
     <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
     <script src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" ></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" crossorigin></script> 
    
     @yield('js')
 
 </head>
 
 <body>
-    <!-- Preloader section 
-    <div class="preloader">
 
-        <div class="sk-spinner sk-spinner-pulse"></div>
-
-    </div>-->
 
     <header>
 

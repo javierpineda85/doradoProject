@@ -1,9 +1,16 @@
 @extends('layouts.plantilla')
 
-@section('title')
-Contacto - Dorado
+@section('canonical')
+<link rel="canonical" href="https://www.dorado.com.ar/contacto">
 @endsection
 
+@section('title')
+Contacto     |     Dorado
+@endsection
+
+@section('description')
+<meta name="description" content="Nos podrás contactar por estos medios. Queremos estar cerca tuyo para poder asesorarte.">
+@endsection
 
 @section('main')
     <!-- Header section -->

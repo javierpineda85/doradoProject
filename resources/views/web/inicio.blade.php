@@ -1,9 +1,16 @@
 @extends('layouts.plantilla')
 
-@section('title')
-Inicio - Dorado
+@section('canonical')
+<link rel="canonical" href="https://www.dorado.com.ar/inicio">
 @endsection
 
+@section('title')
+Inicio     |     Dorado
+@endsection
+
+@section('description')
+<meta name="description" content="Somos un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.">
+@endsection
 
 @section('main')
 <!-- Header section -->
@@ -40,7 +47,7 @@ Inicio - Dorado
 
                                 <div class="iso-box photoshop branding col-md-4 col-sm-6">
                                     <div class="portfolio-thumb">
-                                        <img src="../img/area-familia.jpg" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/area-familia.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="# "><i class="fa fa-link "></i></a>
@@ -52,7 +59,7 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic template col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="../img/inclusion-social.jpg" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/inclusion-social.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="# "><i class="fa fa-link "></i></a>
@@ -64,7 +71,7 @@ Inicio - Dorado
 
                                 <div class="iso-box template graphic col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="../img/prestaciones.png" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/prestaciones.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
@@ -76,7 +83,7 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic template col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="../img/taller-inclusivos.jpg" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/taller-inclusivos.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
@@ -88,7 +95,7 @@ Inicio - Dorado
 
                                 <div class="iso-box photoshop branding col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="../img/investigacion.jpg" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/investigacion.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>
@@ -100,7 +107,7 @@ Inicio - Dorado
 
                                 <div class="iso-box graphic branding col-md-4 col-sm-6 ">
                                     <div class="portfolio-thumb ">
-                                        <img src="../img/novedades.jpg" class="img-responsive " alt="Portfolio ">
+                                        <img src="../img/novedades.webp" class="img-responsive " alt="Portfolio ">
                                         <div class="portfolio-overlay ">
                                             <div class="portfolio-item ">
                                                 <a href="#"><i class="fa fa-link "></i></a>

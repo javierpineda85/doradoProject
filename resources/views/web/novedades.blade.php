@@ -1,9 +1,17 @@
 @extends('layouts.plantilla')
 
-@section('title')
-Novedades- Dorado
+@section('canonical')
+<link rel="canonical" href="https://www.dorado.com.ar/novedades">
 @endsection
 
+
+@section('title')
+Novedades     |     Dorado
+@endsection
+
+@section('description')
+<meta name="description" content="Mantenete actualizado con las novedades de DORADO para no perderte ningún evento. Queremos que seas parte de la familia DORADO">
+@endsection
 
 @section('main')
 <!-- Header section -->

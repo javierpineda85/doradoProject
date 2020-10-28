@@ -1,6 +1,8 @@
 @extends('layouts.plantilla')
 
-
+@section('title')
+Registarse
+@endsection
 
 @section('main')
 <div class="container">

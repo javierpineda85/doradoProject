@@ -35,7 +35,7 @@ Evolucionar Pacientes
         </div>
         @endforeach
 
-        @foreach($histories as $storie)
+        
         <div class="row"> <!--Fecha terapeuta area -->
             <table class="table table-sm table-hover">
                 <thead>
@@ -46,19 +46,19 @@ Evolucionar Pacientes
                         <th>Prioridad</th>
                 </thead>
                 <tbody>
-                    
+                @foreach($histories as $storie)    
                     <tr>                    
                         <td> {{$storie->date}}</td>
                         <td> {{$storie->name}} {{$storie->lastName}} </td>
                         <td> {{$storie->body}}</td>
                         <td> {{$storie->priority}}</td>
                     </tr>
-                
+                @endforeach 
                 </tbody>
             </table>
         </div>
         
-        @endforeach  
+        
     </div>
 </div>
     <!-- pagination  -->

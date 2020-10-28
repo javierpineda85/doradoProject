@@ -1,6 +1,8 @@
 @extends('layouts.plantilla')
 
-
+@section('title')
+Iniciar Sesión
+@endsection
 
 @section('main')
 <div class="container">

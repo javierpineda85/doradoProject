@@ -170,7 +170,7 @@ class ProfileProfController extends Controller
         if($req->file('file')){
           $path = Storage::disk('public')
                           ->put('image',$req->file('file'));
-          $newProf->fill(['file'=>asset($path)])->save();
+          $newProfe->fill(['file'=>asset($path)])->save();
       }
         return back()->with('info','El Profesional has sido creado con exito!');
     }

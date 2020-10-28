@@ -6,3 +6,4 @@
 |--------------------------------------------------------------------------
 */
 Route::get('/admin/admin','Backend\DashboardController@index')->name('cpanel');
+

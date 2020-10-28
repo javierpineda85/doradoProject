@@ -1,6 +1,8 @@
 @extends('layouts.plantilla')
 
-
+@section('title')
+Restaurar Contraseña
+@endsection
 
 @section('main')
 <div class="container">

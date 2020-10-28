@@ -59,7 +59,7 @@ Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@sto
 |--------------------------------------------------------------------------
 */
 Route::get('/admin/padres/buscar-padre','ProfileParentController@searchPadre')->name('searchPadre');
-
+Route::get('/admin/parents/inicio','ProfileParentController@index')->middleware('parents');
 
 
 /*

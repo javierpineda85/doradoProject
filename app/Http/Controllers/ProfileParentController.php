@@ -6,8 +6,12 @@ use App\Http\Requests\ProfileParentStoreRequest;
 use App\Http\Requests\ProfileParentUpdateRequest;
 
 use Illuminate\Http\Request;
+use App\Profile_kid;
+use App\School;
+use App\Location;
 use App\Profile_parent;
 use App\User;
+use App\History;
 
 class ProfileParentController extends Controller
 {
@@ -26,5 +30,6 @@ class ProfileParentController extends Controller
         $vac = compact("padres");
         return view('/admin/padres/elegir-padre',$vac);
     }
+
 
 }

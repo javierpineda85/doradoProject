@@ -37,7 +37,7 @@ class HistoryController extends Controller
                             ->paginate(15); */
       $histories = History::join('users','histories.user_id','=','users.id')
                             ->where('profile_kid_id','=',$id)
-                            ->orderBy('date', 'ASC')
+                            ->orderBy('date', 'DESC')
                             ->paginate(15);                      
 
       $vac=compact("pacientes","histories");

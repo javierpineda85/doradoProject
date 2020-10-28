@@ -1,9 +1,17 @@
 @extends('layouts.plantilla')
 
-@section('title')
-Nosotros - Dorado
+@section('canonical')
+<link rel="canonical" href="https://www.dorado.com.ar/nosotros">
 @endsection
 
+
+@section('title')
+Nosotros     |     Dorado
+@endsection
+
+@section('description')
+<meta name="description" content="En Dorado trabaja un equipo de profesionales de la salud y la educación orientados al desempeño y aplicación de estrategias y programas inter y transdisicplinarios.">
+@endsection
 
 @section('main')
 <!-- Header section -->
