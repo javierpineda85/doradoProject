@@ -15,19 +15,12 @@ class CreateChatsTable extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('category_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
-            $table->string('name');
-            
+            $table->integer('FromUser_id')->unsigned();
+            $table->integer('ToUser_id')->unsigned();
+            $table->string('title');
+            $table->mediumText('body');
+            $table->enum('reed',['TRUE','FALSE'])->default('FALSE');
             $table->timestamps();
-
-            $table->foreign('category_id')->references('id')->on('categories')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
-            $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
         });
     }
 

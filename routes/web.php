@@ -104,6 +104,16 @@ Route::get('/admin/noticias/ver-novedad{id?}','NovedadeController@verNovedad')->
 Route::post('/admin/noticias/borrar-novedad{id?}','NovedadeController@deleteNovedad')->name('deleteNews');
 Route::get('/admin/noticias/listado-de-novedades','NovedadeController@listadoNovedades')->name('showNews');
 Route::get('/admin/noticias/listado-de-novedadesPorTitulo','NovedadeController@listarPorTituloNovedades')->name('showTitleNews');
+
+/*
+|--------------------------------------------------------------------------
+|admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/admin/mensajeria/mensajes','ChatController@index')->name('msn');
+Route::get('/admin/mensajeria/mensajes-enviados','ChatController@enviados')->name('msnEnviados');
+Route::post('/admin/mensajeria/mensajes','ChatController@store')->name('storeChat');
+
 /*
 |--------------------------------------------------------------------------
 |admin Routes
@@ -111,6 +121,7 @@ Route::get('/admin/noticias/listado-de-novedadesPorTitulo','NovedadeController@l
 */
 
 Route::get('/admin/inicio','AdminController@index')->name('dashboard');
+
 //Route::get('/admin/historia-clinica','AdminController@historiaClinica');
 //Route::get('/admin/gestion-de-usuarios','AdminController@gestionUsuario');
 //Route::get('/admin/listado-de-usuarios','AdminController@listadoUsuario');

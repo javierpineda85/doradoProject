@@ -6,13 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chat extends Model
 {
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+    protected $fillable=['FromUser_id','ToUser_id','title','body','reed'];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+
+    public function user(){
+        return $this->belongsToMany(User::class)->withTimestamps;
     }
+    /*public function category(){
+        return $this->belongsTo(Category::class);
+    } */
 
     public function comments(){
         return $this-> morphMany(Comment::class, 'commentable');

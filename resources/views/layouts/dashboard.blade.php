@@ -69,6 +69,7 @@
                   <li class="nav-item"> <a href="{{route('showUser')}}" class="nav-link text-white p-2 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-calendar-alt text-light fa-lg mr-3"></i>Calendario</a> </li>
                   <li class="nav-item"> <a href="{{route('showNews')}}" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-file text-light fa-lg mr-3"></i>Novedades</a> </li>
+                  <li class="nav-item"> <a href="/admin/mensajeria/mensajes" class="nav-link text-white p-2 mb-2 sidebar-link"> <i class=" fas fa-comments text-light fa-lg mr-3"></i>Mensajes</a> </li>
                 </ul>
               </div>
               <!-- end sidebar -->

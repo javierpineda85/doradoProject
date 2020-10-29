@@ -74,7 +74,7 @@ Panel de Control
     </div>
     
 
-    <!-- administrar disciplinas -->
+    <!-- administrar disciplinas 
 
     <div class="col-xl-6 col-sm-6 p-2">
         <div class="card card-common border-left-info">
@@ -92,10 +92,11 @@ Panel de Control
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
         
-    <!-- administrar calendario -->
+    
 
+    <!-- administrar calendario -->
     <div class="col-xl-6 col-sm-6 p-2">
         <div class="card card-common border-left-success">
             <div class="card-body">

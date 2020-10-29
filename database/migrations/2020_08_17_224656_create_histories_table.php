@@ -23,7 +23,7 @@ class CreateHistoriesTable extends Migration
             $table->mediumText('body'); 
             $table->string('priority');
             $table->enum('status',['PUBLISHED','DRAF'])->default('PUBLISHED');
-             $table->timestamps();
+            $table->timestamps();
 
             
             /* $table->foreign('user_id')->references('id')->on('users')
