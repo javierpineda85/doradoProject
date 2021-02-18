@@ -138,7 +138,7 @@ class ProfileKidController extends Controller
    
     //Crea registro de paciente en DB
     $newkid = [
-        'profile_parent_id'  => $req->user_id,
+        'profile_parent_id'  => $req->user_id, 
         'name'               => $req->name,
         'lastName'           => $req->lastName,
         'file'               => $req->file,

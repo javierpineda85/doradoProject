@@ -9,7 +9,11 @@ use App\Novedade;
 class PageController extends Controller
 {
     public function inicio(){
-        return view('web.inicio');
+        $novedades = Novedade::orderBy('created_at','desc')
+                                ->paginate(3);
+
+        $vac=compact("novedades");
+        return view('web.inicio',$vac);
     }
 
     public function nosotros(){
@@ -25,5 +29,25 @@ class PageController extends Controller
 
         $vac=compact("novedades");
         return view('web.novedades',$vac);
+    }
+
+    public function areaFamilia(){
+        return view('web.familia');
+    }
+
+    public function inclusion(){
+        return view('web.inclusion-social');
+    }
+
+    public function talleres(){
+        return view('web.talleres-inclusivos');
+    }
+
+    public function investigacion(){
+        return view('web.investigacion');
+    }
+
+    public function prestaciones(){
+        return view('web.prestaciones');
     }
 }
