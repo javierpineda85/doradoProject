@@ -2,11 +2,11 @@
 
 
 @section('title')
-Evolucionar Pacientes
+Evolucionar
 @endsection
 
 @section('admin-section')
-/Pacientes/Evolucionar
+/Concurrentes/Evolucionar
 @endsection
 
 @section('main')
@@ -28,7 +28,12 @@ Evolucionar Pacientes
                 </div>
                 <div class="col border d-flex align-items-center p-2">
                     <Label class="mr-2 font-weight-bold">Seguimiento: </Label>
-                    <input name="tracking_number">
+                    <input type= "text" name="tracking_number" id="tracking_number"  value='' readonly="readonly">
+                        <script>
+                            var f = new Date().toISOString().replaceAll("-","");
+                            document.getElementById('tracking_number').value = f;
+                        </script>
+                   
                 </div>
                 
                 <div class="col border d-flex align-items-center p-2">
@@ -83,7 +88,7 @@ Evolucionar Pacientes
                         <div class="form-check form-check-inline">
                             <label for=""class="p-1 pt-2 font-weight-bold">Tipo de Registro: </label>
                             {{Form::label('prioridad', 'PRIVADO', ['class' => 'bg-light p-2 m-2'])}}
-                            {{Form::radio('status', 'DRAFT')}}
+                            {{Form::radio('status', 'DRAF', true)}}
 
                             {{Form::label('prioridad', 'PUBLICO', ['class' => 'bg-light p-2 m-2'])}}
                             {{Form::radio('status', 'PUBLISHED', true)}}

@@ -6,7 +6,7 @@ Cargar Historia Clinica
 @endsection
 
 @section('admin-section')
-/ Pacientes / Gestion de pacientes
+/ Concurrentes / Gestión de Concurrentes
 @endsection
 
 @section('main')

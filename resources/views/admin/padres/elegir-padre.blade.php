@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Profesionales/Elegir Padre
+/ Profesionales/Elegir Padre-Tutor
 @endsection
 
 @section('main')
@@ -17,7 +17,7 @@ Panel de Control
         </div>
        
     </div>
-    <h3 class="text-muted text-center mb-3 mt-3">Elegir un Padre</h3>
+    <h3 class="text-muted text-center mb-3 mt-3">Elegir un Padre / Tutor</h3>
     <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">

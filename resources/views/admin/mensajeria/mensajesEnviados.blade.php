@@ -29,7 +29,7 @@ Mensajería
                     <option value="all" selected disabled>Todos los usuarios</option>
                     @foreach($usuarios as $user)
                     
-                    <option value="{{$user->id}}">{{$user->name}} {{$user->lastName}}</option>
+                    <option value="{{$user->id}}">{{$user->lastName}} {{$user->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -51,7 +51,7 @@ Mensajería
         <div class="form-group pt-1">
             <div class="input-group">
                 <input type="hidden" name="stop" value="{{$allUsers}}">
-                <button class="btn btn-sm btn-block btn-success m-1" type="submit">Guardar</button>
+                <button class="btn btn-sm btn-block btn-success m-1" type="submit">Enviar</button>
                 <button class="btn btn-sm btn-block btn-info m-1" type="reset" name="button">{{ __('Limpiar Campos') }}</button>
                         
             </div>

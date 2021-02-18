@@ -6,7 +6,7 @@ Cargar Historia Clinica
 @endsection
 
 @section('admin-section')
-/Pacientes/Nueva Historia Clinica
+/Concurrentes/Nueva História Clínica
 @endsection
 
 @section('main')
@@ -247,7 +247,7 @@ Cargar Historia Clinica
             </div>
         </div>
 
-    <!-- DATOS OBRA SOCIAL -->
+        <!-- DATOS OBRA SOCIAL -->
         
         <div class="form-row">
             <h4 class="pt-2 pb-2 m-2">Datos Obra Social</h4>

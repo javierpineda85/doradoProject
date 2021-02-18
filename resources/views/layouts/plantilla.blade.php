@@ -16,9 +16,10 @@
 
    <title>@yield('title')</title>
    
-    <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <!--<link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>-->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../../css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- Animation CSS -->
     <link rel="stylesheet" href="../../css/animation.min.css">  
@@ -36,8 +37,7 @@
 
     <!--Personal CSS -->
 
-    <link rel="stylesheet" href="../../css/app.css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+   <!-- <link rel="stylesheet" href="../../css/app.css">-->
 
     @yield('css')
 
@@ -47,9 +47,7 @@
     <!--FontAwesome -->
     <script src="https://kit.fontawesome.com/7907a05fb3.js"></script>
     <script src="js/jquery.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" crossorigin></script> 
-   
+
     @yield('js')
 
 </head>
@@ -100,12 +98,13 @@
 
                                                 @else
                                                     <li class="nav-item dropdown">
-                                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('dashboard') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                                                            ¡Hola {{ Auth::user()->name }}!
                                                         </a>
 
-                                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                        <div class="dropdown-menu dropdown-menu-lg-right">
+                                                            <a class="dropdown-item text-dark" href="{{ route('dashboard') }}">Panel de Control</a>
+                                                            <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
                                                                 {{ __('Salir') }}
@@ -156,7 +155,7 @@
                             <a href="# " class="fab fa-instagram"></a>
                         </li>
                         <li>
-                            <a href="# " class="fab fa-whatsapp "></a>
+                            <a href="https://wa.me/+5492613634997?text=Me%20gustaría%20conocer%20más%20sobre%20ustedes" class="fab fa-whatsapp "></a>
                         </li>
                         
                     </ul>
@@ -168,14 +167,15 @@
     </footer>
 
     <!-- Javascript -->
-    <script src="js/jquery.js "></script>
-    <script src="js/bootstrap.min.js "></script>
+    
+    
     <script src="js/isotope.js "></script>
     <script src="js/imagesloaded.min.js "></script>
     <script src="js/wow.min.js "></script>
     <script src="js/custom.js "></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
 </body>
 

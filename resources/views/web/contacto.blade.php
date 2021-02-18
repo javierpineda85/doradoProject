@@ -48,6 +48,7 @@ Contacto     |     Dorado
                     <h1 class="p-3">Envianos tu mensaje!</h1>
                     <div class="contact-form p-3">
                         <form id="contact-form" method="post" action="#">
+                            @csrf
                             <input name="name" type="text" class="form-control" placeholder="Tu nombre" required>
                             <input name="email" type="email" class="form-control" placeholder="Tu Email" required>
                             <textarea name="message" class="form-control" placeholder="Tu mensaje" rows="4" required></textarea>
@@ -63,11 +64,12 @@ Contacto     |     Dorado
                 <div class="col-md-4 col-sm-4">
                     <div class="wow fadeInUp media" data-wow-delay="0.3s">
                         <div class="media-object pull-left">
-                            <i class="fa fa-tablet"></i>
+                            <i class="fab fa-whatsapp-square" style="font-size: 30px;"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Teléfono</h3>
-                            <p>261 4310396</p>
+                            
+                            <p><a href="https://wa.me/+5492613634997?text=Me%20gustaría%20conocer%20más%20sobre%20ustedes">2613634997</a></p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +81,7 @@ Contacto     |     Dorado
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Email</h3>
-                            <p>info@dorado.com.ar</p>
+                            <p><a href="mailto:info@dorado.com.ar?subject=Mensaje%20de%20la%20web&body=Hola!%20Me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20ustedes!">info@dorado.com.ar</a></p>
                         </div>
                     </div>
                 </div>

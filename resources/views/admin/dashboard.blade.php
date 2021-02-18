@@ -12,7 +12,7 @@ Panel de Control
 
     <!-- administrar usuarios -->
 
-    <div class="col-xl-6 col-sm-6 p-2">
+    <div class="col-xl-5 col-sm-5 p-2">
         <div class="card card-common border-left-primary">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -32,7 +32,7 @@ Panel de Control
 
     <!-- administrar pacientes -->
    
-    <div class="col-xl-6 col-sm-6 p-2"> 
+    <div class="col-xl-5 col-sm-5 p-2"> 
         <div class="card card-common border-left-info">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -40,14 +40,36 @@ Panel de Control
 
                 </div>
                 <div class="text-right text-secondary">
-                    <h5>Administrar Pacientes</h5>
+                    <h5>Administrar Concurrentes</h5>
 
                 </div>
                 <div class="card-footer text-secondary">
 
                     <span class="btn btn-sm btn-info"> <a href="{{route('searchPadre')}}">Nuevo</a></span>
                     <span class="btn btn-sm btn-info"> <a href="/admin/pacientes/listado-de-pacientes">Listado</a></span>
-                    <!-- <span class="btn btn-info"> <a href="#">Administrar</a></span> -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Listado de Padres -->
+   
+    <div class="col-xl-5 col-sm-5 p-2"> 
+        <div class="card card-common border-left-info">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <i class="fas fa-user-friends fa-3x text-info"></i>
+
+                </div>
+                <div class="text-right text-secondary">
+                    <h5>Padres / Tutores</h5>
+
+                </div>
+                <div class="card-footer text-secondary">
+
+                    <span class="btn btn-sm btn-info"> <a href="/admin/padres/listado-padres">Listado</a></span>
+                    
                 </div>
             </div>
         </div>
@@ -55,7 +77,7 @@ Panel de Control
     
     <!-- administrar profesionales -->
 
-    <div class="col-xl-6 col-sm-6 p-2">
+    <div class="col-xl-5 col-sm-5 p-2">
         <div class="card card-common border-left-info">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -72,32 +94,29 @@ Panel de Control
             </div>
         </div>
     </div>
-    
+      
+    <!-- Mensajeria -->
 
-    <!-- administrar disciplinas 
-
-    <div class="col-xl-6 col-sm-6 p-2">
-        <div class="card card-common border-left-info">
+      <div class="col-xl-5 col-sm-5 p-2">
+        <div class="card card-common border-left-success">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <i class="fas fa-book-reader fa-3x text-info"></i>
+                    <i class=" fas fa-comments fa-3x text-success"></i>
                 </div>
                 <div class="text-right text-secondary">
-                    <h5>Administrar disciplinas</h5>
+                    <h5>Mensajeria</h5>
                 </div>
                 <div class="card-footer text-secondary">
-                    <span class="btn btn-sm btn-info"> <a href="#">Nuevo</a></span>
-                    <span class="btn btn-sm btn-info"> <a href="#">Listado</a></span>
-                    <span class="btn btn-sm btn-info"> <a href="#">Gestionar</a></span>
+                    <span class="btn btn-sm btn-success"> <a href="/admin/mensajeria/mensajes">Ir a ...</a></span>
                 </div>
             </div>
         </div>
-    </div>-->
-        
+    </div> 
+     
     
 
     <!-- administrar calendario -->
-    <div class="col-xl-6 col-sm-6 p-2">
+    <div class="col-xl-5 col-sm-5 p-2">
         <div class="card card-common border-left-success">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -116,7 +135,7 @@ Panel de Control
 
     <!--Novedades -->
 
-    <div class="col-xl-6 col-sm-6 p-2">
+    <div class="col-xl-5 col-sm-5 p-2">
         <div class="card card-common border-left-warning">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -132,6 +151,7 @@ Panel de Control
             </div>
         </div>
     </div>
+
     
 </div>
 

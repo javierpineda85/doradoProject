@@ -6,14 +6,14 @@ Evolucionar Pacientes
 @endsection
 
 @section('admin-section')
-/ Pacientes / Historia Clinica
+/ Concurrentes / História Clínica
 @endsection
 
 @section('main')
 
 <div class="row pt-md-5 mt-md-3 mb-5">
     <div class="p-3 m-3">
-        <h3>Historia Clinica</h3>
+        <h3>História Clínica</h3>
     </div>
     
     <div class="container">
@@ -44,6 +44,10 @@ Evolucionar Pacientes
                         <th>Profesional</th>
                         <th>Observación</th>
                         <th>Prioridad</th>
+                        <th>Tipo de Reg.</th>
+                        @if(Auth::user()->group_id =="3")
+                        <th>Nro de Seguimiento</th>
+                        @endif
                 </thead>
                 <tbody>
                 @foreach($histories as $storie)    
@@ -52,6 +56,10 @@ Evolucionar Pacientes
                         <td> {{$storie->name}} {{$storie->lastName}} </td>
                         <td> {{$storie->body}}</td>
                         <td> {{$storie->priority}}</td>
+                        <td>{{$storie->status}}</td>
+                        @if(Auth::user()->group_id =="3")
+                        <td>{{$storie->tracking_number}}</td>
+                        @endif
                     </tr>
                 @endforeach 
                 </tbody>

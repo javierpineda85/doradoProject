@@ -6,7 +6,7 @@ Panel de Control
 @endsection
 
 @section('admin-section')
-/ Pacientes / Listado de pacientes
+/ Concurrentes / Listado de Concurrentes
 @endsection
 
 @section('main')
@@ -23,9 +23,13 @@ Panel de Control
             </form>
         </div>
         <button class="btn btn-sm btn-info" type="reset" name="button"> <a href="/admin/pacientes/listado-de-pacientes">Listar todo</a></button>
-        <button class="btn btn-sm btn-success ml-2"> <a href="{{route('searchPadre')}}">Nuevo</a></button>
+       
+        @if(Auth::user()->group_id =="3") 
+            <button class="btn btn-sm btn-success ml-2"> <a href="{{route('searchPadre')}}">Nuevo</a></button>
+        @endif
+        
     </div>
-    <h3 class="text-muted text-center mb-3 mt-3">Listado de Pacientes</h3>
+    <h3 class="text-muted text-center mb-3 mt-3">Listado de Concurrentes</h3>
     <table class="table table-sm table-hover">
         <thead>
             <tr class="text-muted">
@@ -46,7 +50,9 @@ Panel de Control
                 <td> {{$paciente->birthday}}</td>
                 <td> {{$paciente->diagnostic}}</td>
                 <td> {{$paciente->socialMedicine}}</td>
+                @if(Auth::user()->group_id =="3")
                 <td><button class="btn btn-sm btn-info"> <a href="/admin/pacientes/modificar-paciente-{{$paciente->id}}"><i class="far fa-eye"></i></a></button></td>
+                @endif
                 <td><button class="btn btn-sm btn-warning"><a href="/admin/pacientes/evolucionar-paciente-{{$paciente->id}}"><i class="fas fa-pencil-alt"></i></a></button></td>
                 <td><button class="btn btn-sm btn-success"><a href="/admin/pacientes/historia-clinica-{{$paciente->id}}"><i class="fas fa-file-alt"></i></a</button></td>
             </tr>

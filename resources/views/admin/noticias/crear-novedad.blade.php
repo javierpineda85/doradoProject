@@ -12,7 +12,7 @@ Crear Novedad
 @section('main')
 
 <div class="row pt-md-2 mt-md-2 mb-2">
-    <div class="p-2 m-2">
+    <div class="p-2 m-">
         <h3>Crear Novedad</h3>
     </div>
 </div>   
