@@ -658,6 +658,97 @@ a.icon {
 }
 
 
+/* blog & single post section styles
+/* ========================================== */
+
+#blog,
+#single-post {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+#blog .blog-thumb {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+#blog .post-format,
+#single-post .post-format {
+    padding-bottom: 10px;
+}
+
+#blog .post-format span,
+#single-post .post-format span {
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-right: 10px;
+}
+
+#blog .blog-thumb .btn {
+    border-radius: 0px;
+    padding: 10px 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 22px;
+    transition: all 0.4s ease-in-out;
+}
+
+#blog .blog-thumb .btn:hover {
+    background: #111112;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+#single-post blockquote {
+    margin-top: 32px;
+    letter-spacing: 2px;
+}
+
+.post-image {
+    margin: 25px 0px;
+}
+
+#single-post .blog-comment,
+#single-post .blog-comment-form {
+    margin-top: 62px;
+}
+
+#single-post .blog-comment h3,
+#single-post .blog-comment-form h3 {
+    padding-bottom: 20px;
+}
+
+#single-post .blog-comment .media {
+    padding-bottom: 22px;
+}
+
+#single-post .blog-comment .media img {
+    padding-right: 14px;
+}
+
+#single-post .blog-comment h4 {
+    font-weight: 700;
+}
+
+#single-post .blog-comment-form .form-control {
+    background: transparent;
+    border: 1px solid #eee;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 16px;
+    margin-bottom: 16px;
+    transition: all 0.4s ease-in-out;
+}
+
+#single-post .blog-comment-form input[type="submit"] {
+    background: #111112;
+    border-color: transparent;
+    color: #ffffff;
+    height: 50px;
+}
+
+
 /* contact section styles
 /* ========================================== */
 
