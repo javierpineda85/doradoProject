@@ -22,6 +22,15 @@ Route::get('/contacto','Web\PageController@contacto')->name('contacto');
 
 Route::get('/novedades','Web\PageController@novedades')->name('novedades');
 
+Route::get('/area-familia','Web\PageController@areaFamilia')->name('familia');
+
+Route::get('/inclusion-social-y-educativa','Web\PageController@inclusion')->name('inclusion');
+
+Route::get('/talleres-inclusivos-de-acceso-universal','Web\PageController@talleres')->name('talleres');
+
+Route::get('/investigacion-y-estudios-objetivos','Web\PageController@investigacion')->name('investigacion');
+
+Route::get('/prestaciones-de-apoyo','Web\PageController@prestaciones')->name('prestaciones');
 
 Auth::routes();
 
@@ -59,9 +68,10 @@ Route::post('/admin/pacientes/evolucionar-paciente-{id?}','HistoryController@sto
 |--------------------------------------------------------------------------
 */
 Route::get('/admin/padres/buscar-padre','ProfileParentController@searchPadre')->name('searchPadre');
+Route::get('/admin/padres/listado-padres','ProfileParentController@listadoPadre')->name('listadoPadre');
 Route::get('/admin/parents/inicio','ProfileParentController@index')->middleware('parents');
-
-
+Route::get('/admin/parents/listado','ProfileParentController@listarHijos')->name('listadoHijos');
+Route::get('/admin/parents/historia-clinica-{id}','ProfileParentController@historiaClinicaPadres')->name('historiaHijo');
 /*
 |--------------------------------------------------------------------------
 |PROFILE PROFESIONAL CONTROLLER
