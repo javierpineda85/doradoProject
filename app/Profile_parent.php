@@ -17,6 +17,6 @@ class Profile_parent extends Model
 
 
     public function profile_kid(){
-        return $this->hasOne(Profile_kid::class);
+        return $this->hasMany(Profile_kid::class);
     }
 }
