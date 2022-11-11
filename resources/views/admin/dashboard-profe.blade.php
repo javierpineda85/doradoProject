@@ -12,7 +12,7 @@ Panel de Control
 
     <!-- Listado de Padres -->
    
-    <div class="col-xl-5 col-sm-5 p-2"> 
+    <div class="col-xl-4 col-sm-5 p-2"> 
         <div class="card card-common border-left-info">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -35,7 +35,7 @@ Panel de Control
 
     <!-- administrar pacientes -->
    
-    <div class="col-xl-5 col-sm-5 p-2"> 
+    <div class="col-xl-4 col-sm-5 p-2"> 
         <div class="card card-common border-left-info">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -57,7 +57,7 @@ Panel de Control
     
    <!-- Mensajeria -->
 
-   <div class="col-xl-5 col-sm-5 p-2">
+   <div class="col-xl-4 col-sm-5 p-2">
         <div class="card card-common border-left-success">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -77,7 +77,7 @@ Panel de Control
     
 
     <!-- calendario 
-    <div class="col-xl-5 col-sm-5 p-2">
+    <div class="col-xl-4 col-sm-5 p-2">
         <div class="card card-common border-left-success">
             <div class="card-body">
                 <div class="d-flex justify-content-between">

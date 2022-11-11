@@ -11,13 +11,13 @@ Crear Novedad
 
 @section('main')
 
-<div class="row pt-md-2 mt-md-2 mb-2">
-    <div class="p-2 m-">
+<div class="row offset-2 pt-2 mt-4 mb-2">
+    <div class="p-2">
         <h3>Crear Novedad</h3>
     </div>
 </div>   
 
- <div class="row col-12">      
+ <div class="row offset-2">      
     <form action="{{route('storeNews')}}" class="pt-3 mr-3 pr-2" method="post" enctype="multipart/form-data">
                     @csrf
         <div class="row ">
@@ -63,6 +63,6 @@ Crear Novedad
         </div>
 
     </form>  
-    </div>
+</div>
 </div>
 @endsection

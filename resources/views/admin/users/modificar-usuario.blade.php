@@ -14,7 +14,7 @@ Panel de Control
 
 
 <div class="row justify-content-md-center">
-    <div class="col-xl-6 col-sm-6 p-2 mt-5">
+    <div class="col-xl-8 col-sm-8 p-2 mt-5">
         <div class="card card-common">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -28,36 +28,44 @@ Panel de Control
                    <form action="/admin/users/modificar-usuario-{{$usuario->id}}" class="pt-3" method="POST" enctype="multipart/form-data">
                   
                         @csrf 
-                        <div class="fom-group mt-1">
-                            {{Form::label('name','Nombre: ')}}
-                            {{Form::text('name', $usuario->name, ['class'=>'form-control',])}}
+                        <div class="row">
+                            <div class="fom-group mt-1 col-6">
+                                {{Form::label('name','Nombre: ')}}
+                                {{Form::text('name', $usuario->name, ['class'=>'form-control',])}}
+                            </div>
+                       
+
+                            <div class="fom-group mt-1 col-6">
+
+                                {{Form::label('name','Apellido: ')}}
+                                {{Form::text('lastName', $usuario->lastName, ['class'=>'form-control',])}}
+                            </div>
                         </div>
 
-                        <div class="fom-group mt-1">
+                        <div class="row">
+                            <div class="fom-group mt-1 pt-3 col-6">
+                                {{Form::label('phone','Teléfono: ')}}
+                                {{Form::text('phone', $usuario->phone, ['class'=>'form-control',])}}
+                            </div>
 
-                            {{Form::label('name','Apellido: ')}}
-                            {{Form::text('lastName', $usuario->lastName, ['class'=>'form-control',])}}
+                            <div class="fom-group mt-1 pt-3 col-6">
+                                {{Form::label('email','Correo electrónico: ')}}
+                                {{Form::text('email', $usuario->email, ['class'=>'form-control',])}}
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="fom-group mt-1 pt-3 col-6">
+                                {{Form::label('old_rol','Rol Actual: ')}}
+                                {{Form::label('old_rol', $usuario->group_name, ['class'=>'form-control',])}}
+                            </div>
 
-                        <div class="fom-group mt-1 pt-3">
-                            {{Form::label('phone','Teléfono: ')}}
-                            {{Form::text('phone', $usuario->phone, ['class'=>'form-control',])}}
-                        </div>
+                            <div class="form-group mt-1 mb-3 pt-3 align-items-center col-6">
+                                {{ Form::label('group_id', 'Roles')}}
+                                {{ Form::select('group_id', $groups, null,['placeholder' => 'Seleccione un nuevo rol', 'class'=>'form-control']) }} 
 
-                        <div class="fom-group mt-1">
-                            {{Form::label('email','Correo electrónico: ')}}
-                            {{Form::text('email', $usuario->email, ['class'=>'form-control',])}}
+                            </div>
                         </div>
-                        <div class="fom-group mt-1 pt-3">
-                            {{Form::label('old_rol','Rol Actual: ')}}
-                            {{Form::label('old_rol', $usuario->group_name, ['class'=>'form-control',])}}
-                        </div>
-
-                        <div class="form-group mt-1 mb-3 pt-2 align-items-center">
-                            {{ Form::label('group_id', 'Roles')}}
-                            {{ Form::select('group_id', $groups, null,['placeholder' => 'Seleccione un nuevo rol', 'class'=>'form-control']) }} 
-
-                        </div>
+                        
                             {{ Form::submit('Actualizar',['class'=> 'btn btn-sm btn-success'])}}
 
                     </form> 

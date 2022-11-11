@@ -12,13 +12,13 @@ Modificar Novedad
 @section('main')
 
 
-<div class="row pt-md-2 mt-md-2 mb-2">
+<div class="row offset-2 pt-2 mt-4 mb-2">
     <div class="p-2 m-2">
         <h3>Modificar Novedad</h3>
     </div>
 
 </div>      
- <div class="row"> 
+ <div class="row offset-2"> 
 
      @foreach($novedades as $noticia)
    
@@ -83,7 +83,7 @@ Modificar Novedad
 
     </form>
     </div>
-    <div class="row">
+    <div class="row offset-2">
         <form class="pt-3" action="/admin/noticias/borrar-novedad{{$noticia->id}}" method="POST" enctype="multipart/form-data">
                         @csrf
             <input type="hidden" name="id" value="{{$noticia->id}}">

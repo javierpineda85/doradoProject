@@ -116,7 +116,7 @@
     <main>
       <div class="container-fluid ">
         <div class="row justify-content-center">
-          <div class="col-xl-11 col-lg-9 col-md-8 ml-auto m-3 pt-3">
+          <div class="col-xl-11 col-lg-11 col-md-8 ml-auto m-3 pt-3">
                <!-- INFO / ERROR -->
              @if(session('info'))
                 <div class="container mt-4">

@@ -12,7 +12,7 @@ Panel de Control
 
     <!-- Listado de Padres -->
 
-    <div class="col-xl-5 col-sm-5 p-2">
+    <div class="col-xl-6 col-sm-5 p-2">
         <div class="card card-common border-left-primary">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
